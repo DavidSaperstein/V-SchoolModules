@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title>Anatomy of a Magic Card</title>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>The Anatomy of a Magic Card</h1>
+    <button class="button" id="button" onclick="clickButton()">Start Lesson Here</button>
+    <img src="https://img.scryfall.com/cards/large/front/7/6/769cddf0-2078-456b-a622-057571464fe7.jpg?1572489672" class="flutterFox" >
+    <div id="cardName" class= "blurb">
+        <span class="blurb-title">Card Name</span> - The name of the card.
+    </div>
+    <div id="cardNameBox" class= "blurb-box"></div>
+
+    <div id="manaCost" class= "blurb">
+        <span class="blurb-title">Mana Cost</span> - The amount of mana that must be spent to cast the card. The number indicates how much mana of any color must be spent, and the colored mana symbols indicate how much mana of a particulare color must be spent. In this example, the "Converted Mana Cost" is 2, as in 1 mana of any color plus 1 white mana must be spent to cast Flutterfox.
+    </div>
+
+    <div id="manaCostBox" class= "blurb-box"></div>
+
+    <div id="cardType" class= "blurb">
+        <span class="blurb-title">Card Type</span> - The type of card. The typeline includes what type of card it is, and what subtypes and creature types it is. In this case, the type of card is "Creature" and the creature type is "Fox." Other card types include: Land, Sorcery, Instant, Enchantment, and Artifact.
+    </div>
+
+    <div id="cardTypeBox" class= "blurb-box"></div>
+
+    <div id="setSymbol" class= "blurb">
+        <span class="blurb-title">Set Symbol</span> - Represents the set the card was printed in.
+    </div>
+
+    <div id="setSymbolBox" class= "blurb-box"></div>
+    
+    <div id="rulesText" class= "blurb">
+        <span class="blurb-title">Rules Text</span> - This is where the card's abilities are listed. Abilities can be keywords,
+        which are shorthand for a more complext rule, or completely detailed. Flutterfox's ability is that it has the keyword "Flying"
+        as long as you have an artifact or enchantment in play.
+    </div>
+    
+    <div id="rulesTextBox" class= "blurb-box"></div>
+
+    <div id="flavorText" class= "blurb"><span class="blurb-title">Flavor Text</span> - This text has no rules relevance, but fleshes out the story or world that the card images,
+        names, and abilities reference so that the game isn't just a bland numbers competition.
+    </div>
+        
+    <div id="flavorTextBox" class= "blurb-box"></div>
+
+    <div id="collectorNumber" class= "blurb"><span class="blurb-title">Artist Name & Collector Number</span> - The artist who illustrated 
+        the card and the card's number within the set. These are generally in color order followed by alphebetical order. The color order is 
+        White > Blue > Black > Red > Green > Multicolored > Colorless > Land.
+    </div>
+        
+    <div id="collectorNumberBox" class= "blurb-box"></div>
+
+    <div id="powerToughness" class= "blurb"><span class="blurb-title">Power and Toughness</span> - Power and Toughness only appear on 
+        creature cards. Power is how much damage a creature does when it attacks, and Toughness is how much damage it can take in a 
+        turn before it dies.</div>
+    
+    <div id="powerToughnessBox" class="blurb-box"></div>
+
+    <script src="app.js"></script>
+</body>

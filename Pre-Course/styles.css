@@ -1,0 +1,201 @@
+body {
+    background-color: rgb(50, 50, 50);
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Libre Baskerville', serif;
+    color: ivory;
+}
+
+.button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 19px;
+    margin-top: 5vh;
+    border: none;
+    background-color: rgb(85, 198, 243);
+    padding: 5px 15px 5px 15px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.75) 3px 3px 1px,
+                inset rgba(255, 255,255, 0.75) 1px 1px 3px,
+                rgba(0, 0, 0, 0.5) 5px 1px 10px;
+}
+
+.button:active {
+    transform: translateY(3px);
+}
+
+.flutterFox {
+    position: absolute;
+    top: 22vh;
+    left: 38vw;
+    width: 25%;
+    border-radius: 30px;
+    filter: brightness(85%)
+}
+
+.blurb-title {
+    font-weight: bold; 
+}
+
+.blurb {
+    position: absolute;
+    display: none;
+    font-family: 'Libre Baskerville', serif;
+    border: solid;
+    z-index: 2;
+    padding: 5px;
+    border-width: 5px;
+    background-color: rgb(134, 134, 133);
+    color: ivory;
+    border-radius: 20px;
+}
+
+.blurb-box {
+    display: none;
+    position: absolute;
+    border: solid;
+    z-index: 2;
+    border-width: 5px;
+    border-radius: 20px;
+}
+
+#cardName {
+    left: 20.5vw;
+    border-color: red;
+    top: 25vh;
+}
+
+#cardNameBox {
+    width: 120px;
+    border-color: red;
+    height: 30px;
+    left: 39.7vw;
+    top: 25.3vh;
+}
+
+#manaCost {
+    max-width: 400px;
+    font-size: small;
+    text-align: justify;
+    right: 14vw;
+    top: 25vh;
+    border-color: blue;
+}
+
+#manaCostBox {
+    width: 75px;
+    border-color: blue;
+    height: 30px;
+    right:37.7vw;
+    top: 25vh;
+}
+
+#cardType {
+    max-width: 400px;
+    font-size: small;
+    text-align: justify;
+    border-color: green;
+    left: 15vw;
+    bottom: 45vh;
+}
+
+#cardTypeBox {
+    width: 150px;
+    border-color: green;
+    bottom: 33.5vh;
+    left: 39.7vw;
+    height: 32px;
+}
+
+#setSymbol {
+    max-width: 400px;
+    text-align: justify;
+    border-color: rgb(194, 46, 108);
+    bottom: 35vh;
+    right: 14vw;
+}
+
+#setSymbolBox {
+    width: 50px;
+    border-color: rgb(194, 46, 108);
+    bottom: 33.5vh;
+    right: 38vw;
+    height: 32px;
+}
+
+#rulesText {
+    max-width: 400px;
+    text-align: justify;
+    border-color: goldenrod;
+    font-size: smaller;
+    left: 15vw;
+    bottom: 30vh;
+}
+
+#rulesTextBox {
+    width: 410px;
+    border-color: goldenrod;
+    left: 39.5vw;
+    bottom: 27vh;
+    height: 47px;
+}
+
+#flavorText {
+    max-width: 400px;
+    text-align: justify;
+    border-color: rgb(107, 196, 223);
+    font-size: smaller;
+    right: 14vw;
+    bottom: 23vh;
+}
+
+#flavorTextBox {
+    height: 100px;
+    width: 410px;
+    border-color: rgb(107, 196, 223);
+    left: 39.5vw;
+    bottom: 14.5vh;
+}
+
+#collectorNumber {
+    max-width: 400px;
+    text-align: justify;
+    border-color: rgb(231, 139, 196);
+    font-size: smaller;
+    left: 15vw;
+    bottom: 10vh;
+}
+
+    /* It was at this point that I realized instead of copy/pasting the different 
+    left and right values, I could have given all the left elements a class and given all the right elements a class 
+    to drastically speed up my css. */
+
+
+#collectorNumberBox {
+    height: 38px;
+    width: 170px;
+    border-color: rgb(231, 139, 196);
+    left: 39vw;
+    bottom: 7vh;
+}
+
+#powerToughness {
+    max-width: 400px;
+    text-align: justify;
+    border-color: rgb(220, 235, 91);
+    font-size: smaller;
+    right: 14vw;
+    bottom: 10vh;
+}
+
+#powerToughnessBox {
+    width: 75px;
+    border-color: rgb(220, 235, 91);
+    height: 30px;
+    right:38.3vw;
+    bottom: 10vh;
+}
