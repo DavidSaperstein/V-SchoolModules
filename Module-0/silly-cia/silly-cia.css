@@ -12,8 +12,7 @@ p {
 }
 
 a {
-   outline: none; 
-   
+    text-decoration: none; 
 }
 
 .You {
@@ -40,4 +39,5 @@ body {
     line-height: 1.75em;
     color: #3A4145;
     text-rendering: geometricPrecision;
+    margin: 0 10% 0 10%;
 }
