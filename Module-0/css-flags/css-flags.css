@@ -123,3 +123,38 @@ body {
     grid-row: 2;
     background-color: gold;
 }
+
+.gambia {
+    display: grid;
+    grid-template-rows: 27.5% 10% 25% 10% auto;
+}
+
+.gambia > .red {
+    grid-row: 1;
+    background-color: red;
+}
+
+.gambia > .white-1 {
+    grid-row: 2;
+    background-color: ivory;
+}
+
+.gambia > .blue {
+    grid-row: 3;
+    background-color: blue;
+}
+
+.gambia > .white-2 {
+    grid-row: 4;
+    background-color: ivory;
+}
+
+.gambia > .green {
+    grid-row: 5;
+    background-color: green;
+}
+
+
+
+
+
