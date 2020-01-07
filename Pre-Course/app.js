@@ -1,4 +1,4 @@
-cdlet count = 0;
+let count = 0;
 function clickButton () {
     const comments = document.getElementsByClassName("blurb");
     const identifiers = document.getElementsByClassName("blurb-box")

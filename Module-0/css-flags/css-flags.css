@@ -126,12 +126,12 @@ body {
 
 .gambia {
     display: grid;
-    grid-template-rows: 27.5% 10% 25% 10% auto;
+    grid-template-rows: 33% 6% 22% 6% auto;
 }
 
 .gambia > .red {
     grid-row: 1;
-    background-color: red;
+    background-color: rgb(206, 17, 38);
 }
 
 .gambia > .white-1 {
@@ -141,7 +141,7 @@ body {
 
 .gambia > .blue {
     grid-row: 3;
-    background-color: blue;
+    background-color: rgb(12, 25, 140);
 }
 
 .gambia > .white-2 {
@@ -151,7 +151,7 @@ body {
 
 .gambia > .green {
     grid-row: 5;
-    background-color: green;
+    background-color: rgb(58, 119, 40);
 }
 
 
