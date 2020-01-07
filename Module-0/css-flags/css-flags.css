@@ -154,7 +154,36 @@ body {
     background-color: rgb(58, 119, 40);
 }
 
+.tonga {
+    display: grid;
+    grid-template-columns: 40% auto;
+    grid-template-rows: 50% auto;
+}
 
+.tonga > .red-top {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: rgb(193, 0, 0)
+}
+
+.tonga > .red-bottom {
+    grid-column: 1/3;
+    grid-row: 2;
+    background-color: rgb(193, 0, 0)
+}
+
+.tonga > .cross {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 20%);
+    background-color: ivory;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.tonga > .cross > .cross-vertical {
+    
+}
 
 
 
