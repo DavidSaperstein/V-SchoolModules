@@ -182,8 +182,90 @@ body {
 }
 
 .tonga > .cross > .cross-vertical {
-    
+    background-color: rgb(193, 0, 0);
+    grid-column: 3;
+    grid-row: 2/5;  
 }
+
+.tonga > .cross > .cross-horizontal {
+    background-color: rgb(193, 0, 0);
+    grid-column: 2/5;
+    grid-row: 3;  
+}
+
+.japan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ivory;
+}
+
+.japan > .circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgb(188,0,45);
+}
+
+.greece {
+    display: grid;
+    grid-template-rows: repeat(9, auto);
+    grid-template-columns: 40% auto;
+    background-color: ivory;
+}
+
+.greece > .lines-1 {
+    grid-row: 1;
+    grid-column: 1/3;
+    background-color: rgb(13,94,175);
+}
+
+.greece > .lines-2 {
+    grid-row: 3;
+    grid-column: 1/3;
+    background-color: rgb(13,94,175);
+}
+
+.greece > .lines-3 {
+    grid-row: 5;
+    grid-column: 1/3;
+    background-color: rgb(13,94,175);
+}
+
+.greece > .lines-4 {
+    grid-row: 7;
+    grid-column: 1/3;
+    background-color: rgb(13,94,175);
+}
+
+.greece > .lines-5 {
+    grid-row: 9;
+    grid-column: 1/3;
+    background-color: rgb(13,94,175);
+}
+
+.greece > .cross {
+    grid-row: 1/6;
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(5, auto);
+    background-color: rgb(13,94,175);
+}
+
+.greece > .cross > .cross-vertical {
+    grid-row: 1/6;
+    grid-column: 3;
+    background-color: ivory;
+}
+
+.greece > .cross > .cross-horizontal {
+    grid-row: 3;
+    grid-column: 1/6;
+    background-color: ivory;
+}
+
+
 
 
 
