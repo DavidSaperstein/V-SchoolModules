@@ -44,3 +44,43 @@
 // } else {
 //     console.log("no")
 // }
+
+// if (typeof "dog" === 'string') {
+//     console.log("yes")
+// }
+
+// if (typeof "true" === 'boolean') {
+//     console.log("yes")
+// } else {
+//     console.log("no")
+// }
+
+// if (typeof true === 'boolean') {
+//     console.log("yes")
+// } else {
+//     console.log("no")
+// }
+
+// if (typeof stuff === 'undefined') {
+//     console.log("stuff is not defined")
+// } else {
+//     console.log("yes")
+// }
+
+// if ("s" > 12) {
+//     console.log ("this works")
+// }
+// //  else {
+// //     console.log ("this doesn't work")
+// // }
+
+// if ("a" > 5){
+//     console.log ("this works")
+// }
+
+
+function oddEven (myNum) {
+    myNum%2 === 0 ? console.log("even") : console.log("odd")
+}
+
+oddEven(10)
