@@ -11,7 +11,7 @@ var dragonCast = {
         {
             name: "Piccolo",
             species: "Namekian",
-            special: ["Regeneration", "Special Beam Cannon",],
+            moveset: ["Regeneration", "Special Beam Cannon",],
             quote: function (){
                 console.log("It's ironic, isn't it? After all my years of training to defeat your father, I go out like this trying to save you; his son.")
             },
@@ -62,7 +62,7 @@ dragonCast.moveset.push("Instant Transmission");
 
 console.log(dragonCast.moveset)
 
-dragonCast.killedBy.special.push("Masenko");
+dragonCast.killedBy[0].moveset.push("Masenko");
 
-console.log(dragonCast.killedBy[moveset])
+console.log(dragonCast.killedBy[0].moveset)
 
