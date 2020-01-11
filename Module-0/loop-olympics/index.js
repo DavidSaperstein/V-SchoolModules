@@ -72,11 +72,37 @@ console.log(occupations)
 
 var otherNames = []
 var otherOccupations = []
-for (i = 0; i < names.length; i++) {
-    if (names[i] == "Harrison Ford" && otherNames[0] != "Harrison Ford") {
-        otherNames.push(names[i])
-    } else if (i%2 === 0) {
-        otherNames.push(names[i]);
-    } 
+let count = 1
+let occuCount = 1
+
+function otherOcc() {
+  if (occupations[i] == "Singer" && otherOccupations[0] != "Singer") {
+    otherOccupations.push(occupations[i]);
+} else if (otherOccupations[0] == "Singer" && occuCount%2 === 0) {
+    occuCount++
+    otherOccupations.push(occupations[i]);
+} else {
+    occuCount++
+}
 
 }
+
+function otherNam() {
+  if (names[i] == "Harrison Ford" && otherNames[0] != "Harrison Ford") {
+  otherNames.push(names[i]);
+} else if (otherNames[0] == "Harrison Ford" && count%2 === 0) {
+  count++
+  otherNames.push(names[i]);
+} else {
+count++
+}
+}
+
+for (i = 0; i < names.length; i++) {
+  otherOcc();
+  otherNam();
+    
+}
+
+console.log(otherNames)
+console.log(otherOccupations)
