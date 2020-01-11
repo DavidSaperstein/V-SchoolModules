@@ -64,6 +64,19 @@ var peopleArray = [
 var names = []
 var occupations = []
 for (i = 0; i < peopleArray.length; i++){
-    names.push(peopleArray[i].name)
-    occupations.push
+    names.push(peopleArray[i].name);
+    occupations.push(peopleArray[i].occupation);
+}
+console.log(names)
+console.log(occupations)
+
+var otherNames = []
+var otherOccupations = []
+for (i = 0; i < names.length; i++) {
+    if (names[i] == "Harrison Ford" && otherNames[0] != "Harrison Ford") {
+        otherNames.push(names[i])
+    } else if (i%2 === 0) {
+        otherNames.push(names[i]);
+    } 
+
 }
