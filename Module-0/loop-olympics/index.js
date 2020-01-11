@@ -61,48 +61,104 @@ var peopleArray = [
 //       console.log(peopleArray[i].name)
 //   }
 
-var names = []
-var occupations = []
-for (i = 0; i < peopleArray.length; i++){
-    names.push(peopleArray[i].name);
-    occupations.push(peopleArray[i].occupation);
-}
-console.log(names)
-console.log(occupations)
+// var names = []
+// var occupations = []
+// for (i = 0; i < peopleArray.length; i++){
+//     names.push(peopleArray[i].name);
+//     occupations.push(peopleArray[i].occupation);
+// }
+// console.log(names)
+// console.log(occupations)
 
-var otherNames = []
-var otherOccupations = []
-let count = 1
-let occuCount = 1
+// var otherNames = []
+// var otherOccupations = []
+// let count = 1
+// let occuCount = 1
 
-function otherOcc() {
-  if (occupations[i] == "Singer" && otherOccupations[0] != "Singer") {
-    otherOccupations.push(occupations[i]);
-} else if (otherOccupations[0] == "Singer" && occuCount%2 === 0) {
-    occuCount++
-    otherOccupations.push(occupations[i]);
-} else {
-    occuCount++
-}
+// function otherOcc() {
+//   if (occupations[i] == "Singer" && otherOccupations[0] != "Singer") {
+//     otherOccupations.push(occupations[i]);
+// } else if (otherOccupations[0] == "Singer" && occuCount%2 === 0) {
+//     occuCount++
+//     otherOccupations.push(occupations[i]);
+// } else {
+//     occuCount++
+// }
 
-}
+// }
 
-function otherNam() {
-  if (names[i] == "Harrison Ford" && otherNames[0] != "Harrison Ford") {
-  otherNames.push(names[i]);
-} else if (otherNames[0] == "Harrison Ford" && count%2 === 0) {
-  count++
-  otherNames.push(names[i]);
-} else {
-count++
-}
-}
+// function otherNam() {
+//   if (names[i] == "Harrison Ford" && otherNames[0] != "Harrison Ford") {
+//   otherNames.push(names[i]);
+// } else if (otherNames[0] == "Harrison Ford" && count%2 === 0) {
+//   count++
+//   otherNames.push(names[i]);
+// } else {
+// count++
+// }
+// }
 
-for (i = 0; i < names.length; i++) {
-  otherOcc();
-  otherNam();
+// for (i = 0; i < names.length; i++) {
+//   otherOcc();
+//   otherNam();
     
+// }
+
+// console.log(otherNames)
+// console.log(otherOccupations)
+
+//gold medal
+
+//1)
+
+// for (i=0; i < 3; i++) {
+//   var Arr = []
+//   Arr.push(0);
+//   Arr.push(0);
+//   Arr.push(0);
+//   console.log(Arr)
+// }
+
+// for (i = 0; i < 3; i++) {
+//   var Arr = []
+//   for (i = 0; i < 3; i++) {
+//     Arr.push(0);
+//   }
+//   console.log(Arr)
+// }
+var Arr = []
+
+// for (i = 0; i < 3; i++) {
+//     Arr.push([]);
+//     for (a = 0; a < 3; a++) {
+//       Arr[i].push(0);
+//     }
+// }
+// console.log(Arr)
+
+
+//2)
+
+// for (i = 0; i < 3; i++){
+//   Arr.push([]);
+//   for (a = 0; a < 3; a++) {
+//     Arr[i].push(i);
+//   }
+// }
+// console.log(Arr)
+
+//3)
+
+for (i = 0; i < 3; i++){
+  Arr.push([]);
+  for (a = 0; a < 3; a++) {
+    Arr[i].push(a);
+  }
 }
 
-console.log(otherNames)
-console.log(otherOccupations)
+for (i = 0; i < 3; i++){
+  for (a = 0; a < 3; a++) {
+    Arr[i][a] = "x"
+  }
+}
+console.log(Arr)
