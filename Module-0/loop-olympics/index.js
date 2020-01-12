@@ -57,16 +57,63 @@ var peopleArray = [
     }
   ]
 
-//   for (i = 0; i < peopleArray.length; i++) {
-//       console.log(peopleArray[i].name)
-//   }
 
-// var names = []
-// var occupations = []
-// for (i = 0; i < peopleArray.length; i++){
-//     names.push(peopleArray[i].name);
-//     occupations.push(peopleArray[i].occupation);
+  // for (i = 0; i < peopleArray.length; i++) {
+  //     console.log(peopleArray[i].name)
+  // }
+
+var names = []
+var occupations = []
+for (i = 0; i < peopleArray.length; i++){
+    names.push(peopleArray[i].name);
+    occupations.push(peopleArray[i].occupation);
+}
+
+// for (i = 0; i < names.length && i < occupations.length; i++)
+var everyOtherName = []
+// for (b = 0; b < names.length; b++) {
+//   if (names[b] == "Harrison Ford" && everyOtherName[0] != "Harrison Ford") {
+//     everyOtherName.push(names[b]);
+//     b++
+//   } else if (everyOtherName[0] == "Harrison Ford") {
+//     everyOtherName.push(names[b]);
+//     b++
+//   }
 // }
+
+var everyOtherOccupation = []
+// for (a = 0; a < occupations.length; a++) {
+//   if (occupations[a] == "Singer" && everyOtherOccupation[0] != "Singer") {
+//     everyOtherName.push(occupationss[a]);
+//     a++
+//   } else if (everyOtherOccupation[0] == "Singer") {
+//     everyOtherOccupation.push(occupations[i]);
+//     a++
+//   }
+// }
+
+for (j = 0, k = 0; j < names.length && k < occupations.length; j++, k++) {
+
+    if (names[j] == "Harrison Ford" && everyOtherName[0] != "Harrison Ford") {
+      everyOtherName.push(names[j]);
+      j++
+    } else if (everyOtherName[0] == "Harrison Ford") {
+      everyOtherName.push(names[j]);
+      j++
+    }
+  
+
+    if (occupations[k] == "Singer" && everyOtherOccupation[0] != "Singer") {
+      everyOtherName.push(occupations[k]);
+      k++
+    } else if (everyOtherOccupation[0] == "Singer") {
+      everyOtherOccupation.push(occupations[k]);
+      k++
+    }
+}
+
+console.log(everyOtherName)
+console.log(everyOtherOccupation)
 // console.log(names)
 // console.log(occupations)
 
@@ -149,16 +196,16 @@ var Arr = []
 
 //3)
 
-for (i = 0; i < 3; i++){
-  Arr.push([]);
-  for (a = 0; a < 3; a++) {
-    Arr[i].push(a);
-  }
-}
+// for (i = 0; i < 3; i++){
+//   Arr.push([]);
+//   for (a = 0; a < 3; a++) {
+//     Arr[i].push(a);
+//   }
+// }
 
-for (i = 0; i < 3; i++){
-  for (a = 0; a < 3; a++) {
-    Arr[i][a] = "x"
-  }
-}
-console.log(Arr)
+// for (i = 0; i < 3; i++){
+//   for (a = 0; a < 3; a++) {
+//     Arr[i][a] = "x"
+//   }
+// }
+// console.log(Arr)
