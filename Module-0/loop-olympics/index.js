@@ -38,48 +38,48 @@
 
 // console.log(fruit2)
 
-// var peopleArray = [
-//     {
-//       name: "Harrison Ford",
-//       occupation: "Actor"
-//     },
-//     {
-//       name: "Justin Bieber",
-//       occupation: "Singer"
-//     },
-//     {
-//       name: "Vladimir Putin",
-//       occupation: "Politician"
-//     },
-//     {
-//       name: "Oprah",
-//       occupation: "Entertainer"
-//     }
-//   ]
+var peopleArray = [
+    {
+      name: "Harrison Ford",
+      occupation: "Actor"
+    },
+    {
+      name: "Justin Bieber",
+      occupation: "Singer"
+    },
+    {
+      name: "Vladimir Putin",
+      occupation: "Politician"
+    },
+    {
+      name: "Oprah",
+      occupation: "Entertainer"
+    }
+  ]
 
 
-//   // for (i = 0; i < peopleArray.length; i++) {
-//   //     console.log(peopleArray[i].name)
-//   // }
+  // for (i = 0; i < peopleArray.length; i++) {
+  //      console.log(peopleArray[i].name)
+  //  }
 
-// var names = []
-// var occupations = []
-// for (i = 0; i < peopleArray.length; i++){
-//     names.push(peopleArray[i].name);
-//     occupations.push(peopleArray[i].occupation);
-// }
+ var names = []
+ var occupations = []
+ for (i = 0; i < peopleArray.length; i++){
+     names.push(peopleArray[i].name);
+     occupations.push(peopleArray[i].occupation);
+ }
 
-// for (i = 0; i < names.length && i < occupations.length; i++)
+//  for (i = 0; i < names.length && i < occupations.length; i++)
 var everyOtherName = []
-// for (b = 0; b < names.length; b++) {
-//   if (names[b] == "Harrison Ford" && everyOtherName[0] != "Harrison Ford") {
+//  for (b = 0; b < names.length; b++) {
+//    if (names[b] == "Harrison Ford" && everyOtherName[0] != "Harrison Ford") {
+//      everyOtherName.push(names[b]);
+//      b++
+//    } else if (everyOtherName[0] == "Harrison Ford") {
 //     everyOtherName.push(names[b]);
-//     b++
-//   } else if (everyOtherName[0] == "Harrison Ford") {
-//     everyOtherName.push(names[b]);
-//     b++
-//   }
-// }
+//      b++
+//    }
+//  }
 
 var everyOtherOccupation = []
 // for (a = 0; a < occupations.length; a++) {
@@ -92,28 +92,27 @@ var everyOtherOccupation = []
 //   }
 // }
 
-// for (j = 0, k = 0; j < names.length && k < occupations.length; j++, k++) {
+for (j = 0, k = 0; j < names.length && k < occupations.length; j++, k++) {
 
-//     if (names[j] == "Harrison Ford" && everyOtherName[0] != "Harrison Ford") {
-//       everyOtherName.push(names[j]);
-//       j++
-//     } else if (everyOtherName[0] == "Harrison Ford") {
-//       everyOtherName.push(names[j]);
-//       j++
-//     }
+    if (names[j] == "Harrison Ford" || everyOtherName[0] != "Harrison Ford") {
+      everyOtherName.push(names[j]);
+      j++
+    } else if (everyOtherName[0] == "Harrison Ford") {
+      everyOtherName.push(names[j]);
+      j++
+    }
   
+    if (occupations[k] == "Singer" || everyOtherOccupation[0] == "Singer") {
+      everyOtherOccupation.push(occupations[k]);
+      k++
+    } else if (everyOtherOccupation[0] == "Singer") {
+      everyOtherOccupation.push(occupations[k]);
+      k++
+    }
+ }
 
-//     if (occupations[k] == "Singer" && everyOtherOccupation[0] != "Singer") {
-//       everyOtherName.push(occupations[k]);
-//       k++
-//     } else if (everyOtherOccupation[0] == "Singer") {
-//       everyOtherOccupation.push(occupations[k]);
-//       k++
-//     }
-// }
-
-// console.log(everyOtherName)
-// console.log(everyOtherOccupation)
+console.log(everyOtherName)
+console.log(everyOtherOccupation)
 // console.log(names)
 // console.log(occupations)
 
