@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+}
+
+#box {
+    display: inline-block;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background-color: black;
+}
