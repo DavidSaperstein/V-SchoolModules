@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    width: 100vw;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    width: 100vw;
+}
+
+nav > a {
+    font-size: 20px;
+    padding-right: 5vw;
+}
+
+body {
+    background: url(img/cool-background.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* img {
+    margin-bottom: 5px;
+} */
+
+main > img  {
+    width: 90vw;
+    margin-left: 8px;
+}
+
+main > section > img  {
+    width: 90vw;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: ivory;
+}
+main > section {
+    width: 90vw;
+    padding: 8px;
+    /* background: rgb(119, 136, 153, 0.2); */
+    margin-top: 10px;
+}
+
+h2 {
+    /* background: rgb(119, 136, 153, 0.5); */
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: darkgreen;
+    margin-bottom: 10px;
+}
+
+main > section > p {
+    text-align: justify;
+    font-size: 20px;
+    color: red;
+}
+
+footer {
+    background-color: black;
+    color: ivory;
+}
+
+@media (min-width: 500px) {
+
+    nav > a {
+        padding-right: 8vw;
+    }
+
+    h1 {
+        font-size: 50px;
+        padding-right: 20px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    
+    main > img {
+        width: 500px;
+        margin-left: 15vw;
+    }
+
+    main > section > img {
+        
+        width: 300px;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+}
