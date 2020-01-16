@@ -30,8 +30,10 @@ body {
 } */
 
 main > img  {
+    display: block;
     width: 90vw;
-    margin-left: 8px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 main > section > img  {
@@ -92,7 +94,6 @@ footer {
     
     main > img {
         width: 500px;
-        margin-left: 15vw;
     }
 
     main > section > img {
@@ -103,4 +104,11 @@ footer {
         margin-bottom: 0;
     }
 
+}
+
+@media (min-width: 1000px) {
+
+    main > img {
+        width: 800px;
+    }
 }

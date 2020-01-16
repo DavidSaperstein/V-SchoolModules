@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    width: 100vw;
+    background: url(/V-School/Module-1/business-time/img/cool-background.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    width: 100vw;
+}
+
+nav > a {
+    font-size: 20px;
+    padding-right: 5vw;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+img, h2 {
+    grid-column: 1;
+}
+
+p {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+footer {
+    background-color: black;
+    color: ivory;
+}
