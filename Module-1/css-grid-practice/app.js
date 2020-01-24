@@ -1,0 +1,3 @@
+function wee () {
+    console.log()
+}
