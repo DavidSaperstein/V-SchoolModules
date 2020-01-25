@@ -1,7 +1,7 @@
 const readline = require("readline-sync")
 
 function add(num1, num2) {
-    return Number(num1) + Number(num2);
+    return num1 + num2;
 }
 
 function sub(num1, num2) {
@@ -16,8 +16,8 @@ function div(num1, num2) {
     return num1/num2;
 }
 
-const num1 = readline.question("Please enter your first number: ")
-const num2 = readline.question("Please enter your second number: ")
+const num1 = Number(readline.question("Please enter your first number: "))
+const num2 = Number(readline.question("Please enter your second number: "))
 const choice = readline.question("Please enter the operation to perform: add, sub, mul, div: ")
 
 if (choice == "add") {
