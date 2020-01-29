@@ -8,15 +8,33 @@ header.appendChild(h1)
 header.appendChild(h3)
 
 const messages = document.getElementsByClassName("message")
-const one = messages[0].split(" ")
-const two = messages[1].split(" ")
-const three = messages[2].split(" ")
-const four = messages[3].split(" ")
+const firstMessage = messages[0].innerText.split(" ")
+const secondMessage = messages[1].innerText.split(" ")
+const thirdMessage = messages[2].innerText.split(" ")
+const fourthMessage = messages[3].innerText.split(" ")
 
-for (i = 0; i < one.length; i++) {
-    if (one[i] = "serious") {
-        one[i] = "exciting"
+for (let i = 0; i < firstMessage.length; i++) {
+    if (firstMessage[i] == "serious") {
+        firstMessage[i] = "exciting"
+        messages[0].innerText = firstMessage.join(" ")
     }
 }
 
-console.log(one)
+for (let i = 0; i < secondMessage.length; i++) {
+    if (secondMessage[i] == "don't") {
+        secondMessage[i] = "would"
+    } else if (secondMessage[i] == "want") {
+        secondMessage[i] = "love"
+    }
+    messages[1].innerText = secondMessage.join(" ")
+}
+
+messages[2].innerText = "We're going to visit later this year"
+messages[3].innerText = "Wonderful!"
+
+document.getElementById("clear-button").addEventListener('click', function(){
+    for (let i = 0; i < messages.length; i++) {
+        messages[i].innerText = ""
+        messages[i].style.backgroundColor = "white"
+    }
+})
