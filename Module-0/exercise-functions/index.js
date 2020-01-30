@@ -1,8 +1,8 @@
 function sum (a,b) {
-    console.log(a + b)
+    return (a + b)
 }
 
-sum (2,3)
+console.log(sum (2,3))
 
 function theBiggest(a = 2 ,b,c) {
     if (a > b && a > c) {
