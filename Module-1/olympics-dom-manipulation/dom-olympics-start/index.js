@@ -38,3 +38,44 @@ document.getElementById("clear-button").addEventListener('click', function(){
         messages[i].style.backgroundColor = "white"
     }
 })
+
+const dropDown = document.getElementById('theme-drop-down')
+// const themeOne = dropDown.options[0].value
+// const themeTwo = dropDown.options[1].value
+
+dropDown.addEventListener("change", function(e) {
+    let left = document.getElementsByClassName("left")
+    let right = document.getElementsByClassName("right")
+    if(e.target.value == "theme-one") {
+        for (let i = 0; i < left.length; i++) {
+            left[i].style.backgroundColor  = "blue"
+        }
+        for (let i = 0; i < right.length; i++) {
+                right[i].style.backgroundColor = "brown"
+        }
+    } else {
+        for (let i = 0; i < left.length; i++) {
+        left[i].style.backgroundColor  = "red"
+        }
+        for (let i = 0; i < right.length; i++) {
+        right[i].style.backgroundColor = "black"
+        }
+    }
+})
+const inputMessage = document.getElementById("messages")
+const length = document.getElementsByClassName("message")
+const send = document.getElementById("send")
+const input = document.getElementById("input")
+
+send.addEventListener("click", function(e) {
+    e.preventDefault()
+    let newMessage = document.createElement("div")
+    newMessage.innerText = input.value
+    if (length.length % 2 === 0) {
+        newMessage.setAttribute("class", "message left")
+    } else {
+        newMessage.setAttribute("class", "message right")
+    }
+    
+    inputMessage.appendChild(newMessage)
+})
