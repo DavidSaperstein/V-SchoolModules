@@ -37,6 +37,8 @@
 }
 
 #list div {
+    display: block;
     margin-bottom: 10px;
     text-align: center;
+    
 }

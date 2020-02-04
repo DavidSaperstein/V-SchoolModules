@@ -2,15 +2,11 @@ const items = document.getElementsByTagName("li")
 const list = document.getElementById("list")
 const button = document.getElementById("button")
 const input = document.getElementById("input")
-const editInput = document.createElement("input")
-const index = []
-
 
 button.addEventListener("click", function (e) {
     e.preventDefault()
     const newest = appendListItemChildren(e)
     list.appendChild(newest)
-    index.push(newest)
 })
 
 function createListItem(e){
@@ -26,32 +22,45 @@ function createNewItem(e){
     return newItem
 }
 
-function createNewEditButton(e){
+function createNewEditButton(e, newItemText){
     e.preventDefault()
     const editButton = document.createElement("button")
+    const newInput = document.createElement("input")
     editButton.innerText = "edit"
-    return editButton
-}
+    editButton.addEventListener("click", function (e){
+      e.preventDefault()
+      if (editButton.innerText == "edit") {
+        editButton.innerText = "save"
+        newInput.value = newItemText
+        editButton.parentElement.insertBefore(newInput, editButton)
+      } else if (editButton.innerText == "save") {
+        editButton.innerText = "edit"
+        editButton.parentElement.firstElementChild.innerText = newInput.value
+        newInput.remove()
+      } else {
+        
+      }
+      })
+      return editButton
+    }
+
 
 function createNewXButton(e){
     e.preventDefault()
     const xButton = document.createElement("button")
     xButton.innerText = "X"
+    xButton.addEventListener("click", () => xButton.parentElement.remove())
     return xButton
 }
 
 function appendListItemChildren (e){
     e.preventDefault()
     const listItem = createListItem(e)
-    listItem.appendChild(createNewItem(e))
-    listItem.appendChild(createNewEditButton(e))
+    const newItem = createNewItem(e)
+    listItem.appendChild(newItem)
+    listItem.appendChild(createNewEditButton(e, newItem.textContent))
     listItem.appendChild(createNewXButton(e))
-    xButton.addEventListener("click", () => removeListItem(newest))
     return listItem
-}
-
-function removeListItem (X){
-    X.remove()
 }
 
 
