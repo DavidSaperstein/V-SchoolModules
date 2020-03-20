@@ -14,21 +14,23 @@ if (name.length > 0) {
 }
 
 const dangers = [
-    goblin = {
+    {
         name: "goblin",
         health: 10,
         weapon: 'Dagger',
         drops: ['Potion', 'Dagger'],
         dialogue: `As you make your way down up the spire, you come to a landing. Just a few feet down the dark corridor, you see a small green humanoid sitting by a campfire. The creature turns its horrid green facade in your direction, bellows an incoherant battle-cry, and charges.`
-    }, 
-    elf = {
+    },
+    
+    {
         name: "elf",
         health: 15,
         weapon: 'Sword',
         drops: ['Scroll of Fireball', 'Sword', 'Nothing'],
         dialogue: `You see a slim being of indescribable beauty in unbelievably shiny armor. There is a faint glow about them. Their features are perfectly symetrical, their skin perfectly smooth. Their teeth perfectly sharp. Their smile...perfectly malicious. They spot you and hiss "Well come on then, have at thee."`
     },
-    darkLord = {
+
+    {
         name: "Dark Lord",
         health: 5,
         weapon: 'Evil Magic Staff of Doom',
