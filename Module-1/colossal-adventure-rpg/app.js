@@ -53,13 +53,12 @@ const moveForward = (min, max) => {
         
     }
 }
-const opponent = {}
-const goblinFight = () => {
-    opponent = dangers[0]
-    console.log(opponent)
+const goblinFight = (opponent) => {
+    trueOpponent = opponent
+    console.log(trueOpponent)
     console.log(`As you make your way down up the spire, you come to a landing. Just a few feet down the dark corridor, you see a small green humanoid sitting by a campfire. The creature turns its horrid green facade in your direction, bellows an incoherant battle-cry, and charges toward you.`)
 
-    while (opponent.health > 0) {
+    while (trueOpponent.health > 0) {
         let fightChoice = readline.keyInSelect(fightOptions, `${hero.name} what do you do?`)
 
         if (fightChoice === 0) {
@@ -72,18 +71,18 @@ const goblinFight = () => {
 function attack() {
     if (hero.weapon === 'Wooden Sword') {
         opponent.health -= 4
-        console.log(`You swing your sword and deal 4 points of damage to the ${opponent.name}`)
+        console.log(`You swing your sword and deal 4 points of damage to the ${trueOpponent.name}`)
     } else if (hero.weapon === 'Dagger') {
         opponent.health -= 6
-        console.log(`You swing your sword and deal 6 points of damage to the ${opponent.name}`)
+        console.log(`You swing your sword and deal 6 points of damage to the ${trueOpponent.name}`)
     } else if (hero.weapon === 'Sword') {
         opponent.health -= 8
-        console.log(`You swing your sword and deal 8 points of damage to the ${opponent.name}`)
+        console.log(`You swing your sword and deal 8 points of damage to the ${trueOpponent.name}`)
     }
 }
 
 
-goblinFight()
+goblinFight(dangers[0])
 // while (darkLord.alive === true) {
 
 
