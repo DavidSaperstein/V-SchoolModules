@@ -25,7 +25,7 @@ const enemies = [
         capitalName: `Goblin`,
         health: 10,
         attack: 3,
-        drop: ['Dirty Rags', 'Dagger']
+        drop: ['Dirty Rags', 'Dagger', `Moldy Bread`]
     },
 
     elf = {
@@ -41,7 +41,7 @@ const enemies = [
         capitalName: `Dark Lord`,
         health: 50,
         attack: 10,
-        drop: [],
+        drop: [`Nothing`, `Nothing`, `Nothing`],
         isAlive: true
     }
 ]
@@ -70,7 +70,20 @@ const deadHero = () => {
 }
 
 const loot = (enemyLoot) => {
+    let treasure = enemyLoot.drop[random(0,2)]
+    inventory.push(treasure)
+    console.log(`The ${enemyLoot.name} dropped a ${treasure}.`)
+    if (treasure === `Longsword`) {
+        destinedHero.attack = 10
+        destinedHero.weapon = `Longsword`
+    } else if (treasure === `Dagger` && destinedHero.weapon != `Longsword`) {
+        destinedHero.attack = 7
+        destinedHero.weapon = `Dagger`
+    } else if (treasure === `Armor`) {
+        destinedHero.health = 50
+    } else {
 
+    }
 }
 
 const fight = () => {
@@ -105,6 +118,7 @@ const fight = () => {
             console.log(`Congratulations, ${destinedHero.name}. You are victorious!`)
         }         
     }
+    loot(currentEnemy)
     deadHero()
 }
 
@@ -115,4 +129,3 @@ const moveForward = () => {
     }
 }
 
-fight()
