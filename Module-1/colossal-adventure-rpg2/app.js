@@ -41,6 +41,7 @@ const enemies = [
         capitalName: `Dark Lord`,
         health: 50,
         attack: 10,
+        drop: [],
         isAlive: true
     }
 ]
@@ -69,7 +70,7 @@ const deadHero = () => {
 }
 
 const loot = (enemyLoot) => {
-    
+
 }
 
 const fight = () => {
