@@ -21,21 +21,24 @@ inventory = ['Wooden Sword']
 const enemies = [
 
     goblin = {
-        name: 'Goblin',
+        name: 'goblin',
+        capitalName: `Goblin`,
         health: 10,
         attack: 3,
         drop: ['Dirty Rags', 'Dagger']
     },
 
     elf = {
-        name: 'Elf',
+        name: 'elf',
+        capitalName: `Elf`,
         health: 20,
         attack: 5,
         drop: ['Key', 'Longsword', 'Armor']
     },
 
     darkLord = {
-        name: 'The Dark Lord',
+        name: 'Dark Lord',
+        capitalName: `Dark Lord`,
         health: 50,
         attack: 10,
         isAlive: true
@@ -59,6 +62,16 @@ const enemyAttack = (enemy) => {
     return damage
 }
 
+const deadHero = () => {
+    if (destinedHero.health <= 0) {
+    console.log(`You have died. Better luck next time?`)
+    }
+}
+
+const loot = (enemyLoot) => {
+    
+}
+
 const fight = () => {
     let randomEncounter = random(1,10)
     let currentEnemy = {}
@@ -72,20 +85,26 @@ const fight = () => {
         currentEnemy = enemies[2]
         console.log(`You finally find the lord of this infernal place. The Dark Lord does not appreciate your trespass. En Garde!`)
     }
-    while (currentEnemy.health > 0 && destinedHero.health > 0 ) {
-        console.log(`${currentEnemy.name} Health: ${currentEnemy.health} ${destinedHero.name} Health: ${destinedHero.health}`)
+    while (currentEnemy.health > 0 && destinedHero.health > 0 ) {        
+        console.log(`${currentEnemy.capitalName} Health: ${currentEnemy.health}        ${destinedHero.name} Health: ${destinedHero.health}`)
         let fightChoice = readline.keyIn(`Press A to Attack \nPress R to run \nWhat do?   `, {limit:`ar`})
         if (fightChoice = `a`) {
-            currentEnemy.health -= attack()
+            let currentAttack = attack()
+            currentEnemy.health -= currentAttack
+            console.log(`You deal ${currentAttack} damage to the ${currentEnemy.name}!`)
         } else {
             //running mechanic
             console.log(`PLACEHOLDER`)
         }  
-        if (currentEnemy.health > 0) {
-            destinedHero.health -= enemyAttack(currentEnemy)
-        }
-        console.log(`you win`)
+        if (currentEnemy.health > 0 && destinedHero.health > 0) {
+            let currentEnemyAttack = enemyAttack(currentEnemy)
+            destinedHero.health -= currentEnemyAttack
+            console.log(`The ${currentEnemy.name}'s attack does ${currentEnemyAttack} damage to you! \n`)
+        } else if (destinedHero.health > 0) {
+            console.log(`Congratulations, ${destinedHero.name}. You are victorious!`)
+        }         
     }
+    deadHero()
 }
 
 const moveForward = () => {
