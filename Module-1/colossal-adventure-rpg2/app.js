@@ -6,51 +6,64 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-// while (darkLordAlive = true) {
-// }
-
 const destinedHero = {
     name: 'Destined Hero',
-    health: 30,
+    baseHealth: 30,
+    currentHealth: 30,
     attack: 5,
     weapon: 'Wooden Sword',
 }
-
-inventory = ['Wooden Sword']
+const name = readline.question("What is your name? ");
+destinedHero.name = name
+const inventory = ['Wooden Sword']
 
 const enemies = [
-
-    goblin = {
+    {
         name: 'goblin',
         capitalName: `Goblin`,
-        health: 10,
+        baseHealth: 10,
+        currentHealth: 10,
         attack: 3,
-        drop: ['Dirty Rags', 'Dagger', `Moldy Bread`]
+        drop: [' Dirty Rags', 'Dagger', `Moldy Bread`]
     },
-
-    elf = {
+    {
         name: 'elf',
         capitalName: `Elf`,
-        health: 20,
+        baseHealth: 20,
+        currentHealth: 20,
         attack: 5,
-        drop: ['Key', 'Longsword', 'Armor']
+        drop: [' Key', 'Longsword', 'Armor']
     },
-
-    darkLord = {
+    {
         name: 'Dark Lord',
         capitalName: `Dark Lord`,
-        health: 50,
+        baseHealth: 50,
+        currentHealth: 50,
         attack: 10,
         drop: [`Nothing`, `Nothing`, `Nothing`],
         isAlive: true
     }
 ]
 
-const fightOptions = ['Attack', 'Run']
-const walkOptions = ['Move Up', 'Status', 'Rest']
-
-const nonCombatOptions =  () => {
-    walkChoice = readline.keyIn(` Press W to Move Forward \n Press S to Check Status \n Press D to Rest `, {limit: 'wasd'})
+const nonCombatOptions = () => {
+    walkChoice = readline.keyIn(` Press W to Move Forward \n Press S to Check Status \n Press D to Rest `, {limit: 'wsd'})
+    if (walkChoice === `w`) {
+        console.log(`\n`)
+        moveForward()
+        console.log(`\n`)
+    } else if (walkChoice === `s`) {
+        console.log(`\n`)
+        checkStatus()
+        console.log(`\n`)   
+    } else if (walkChoice === `d`) {
+        console.log(`\n`) 
+        rest()
+        console.log(`\n`)  
+    } else {
+        console.log(`\n`)
+        console.log(`Can't you follow instructions?`)
+        console.log(`\n`)   
+    }
 }
 
 const attack = () => {
@@ -64,13 +77,13 @@ const enemyAttack = (enemy) => {
 }
 
 const deadHero = () => {
-    if (destinedHero.health <= 0) {
+    if (destinedHero.currentHealth <= 0) {
     console.log(`You have died. Better luck next time?`)
     }
 }
 
 const loot = (enemyLoot) => {
-    if (enemyLoot.health <= 0 && destinedHero.health > 0) {
+    if (enemyLoot.currentHealth <= 0 && destinedHero.currentHealth > 0) {
         let treasure = enemyLoot.drop[random(0,2)]
         inventory.push(treasure)
         console.log(`The ${enemyLoot.name} dropped a ${treasure}.`)
@@ -81,9 +94,7 @@ const loot = (enemyLoot) => {
             destinedHero.attack = 7
             destinedHero.weapon = `Dagger`
         } else if (treasure === `Armor`) {
-            destinedHero.health = 50
-        } else {
-
+            destinedHero.baseHealth = 50
         }
     }
 }
@@ -92,7 +103,7 @@ const run = (runningFrom) => {
     let runChance = random(1,10)
     if (runChance > 7) {
         let currentEnemyAttack = enemyAttack(runningFrom)
-        destinedHero.health -= currentEnemyAttack
+        destinedHero.currentHealth -= currentEnemyAttack
         console.log(`The ${runningFrom.name}'s attack does ${currentEnemyAttack} damage to you! \n`)
     } else {
         console.log(`You successfully escape.`)
@@ -100,7 +111,14 @@ const run = (runningFrom) => {
     return runChance
 }
 
+const isTheDarkLordDead = (monster) => {
+    if (monster.currentHealth <= 0 & monster.name === `Dark Lord` && destinedHero.currentHealth > 0) {
+        enemies[2].isAlive = false
+    }
+}
+
 const fight = () => {
+    console.log(`\n`)
     let randomEncounter = random(1,10)
     let currentEnemy = {}
     if (randomEncounter <= 5) {
@@ -113,16 +131,16 @@ const fight = () => {
         currentEnemy = enemies[2]
         console.log(`You finally find the lord of this infernal place. The Dark Lord does not appreciate your trespass. En Garde!`)
     }
-    while (currentEnemy.health > 0 && destinedHero.health > 0 ) {        
-        console.log(`${currentEnemy.capitalName} Health: ${currentEnemy.health}        ${destinedHero.name} Health: ${destinedHero.health}`)
+    while (currentEnemy.currentHealth > 0 && destinedHero.currentHealth > 0 ) {        
+        console.log(`${currentEnemy.capitalName} Health: ${currentEnemy.currentHealth}        ${destinedHero.name} Health: ${destinedHero.currentHealth}`)
         let fightChoice = readline.keyIn(`Press A to Attack \nPress R to run \nWhat do?   `, {limit:`ar`})
         if (fightChoice === `a`) {
             let currentAttack = attack()
-            currentEnemy.health -= currentAttack
+            currentEnemy.currentHealth -= currentAttack
             console.log(`You deal ${currentAttack} damage to the ${currentEnemy.name}!`)
-            if (currentEnemy.health > 0 && destinedHero.health > 0) {
+            if (currentEnemy.currentHealth > 0 && destinedHero.currentHealth > 0) {
                 let currentEnemyAttack = enemyAttack(currentEnemy)
-                destinedHero.health -= currentEnemyAttack
+                destinedHero.currentHealth -= currentEnemyAttack
                 console.log(`The ${currentEnemy.name}'s attack does ${currentEnemyAttack} damage to you! \n`)
             }
         } else if (fightChoice === `r`) {
@@ -132,8 +150,15 @@ const fight = () => {
             }
         }  
     }
+    isTheDarkLordDead(currentEnemy)
     deadHero()
     loot(currentEnemy)
+    if (currentEnemy != enemies[2]) {
+        currentEnemy.currentHealth = currentEnemy.baseHealth
+        console.log(`Congratulations! You are victorious!`)    
+    } else if (currentEnemy === enemies[2] && enemies[2].currentHealh <= 0) {
+        console.log(`You have cleansed the realm of the evil that was the Dark Lord. You have my thanks.`)
+    }
 }
 
 const moveForward = () => {
@@ -144,8 +169,25 @@ const moveForward = () => {
 }
 
 const checkStatus = () => {
-    console.log(destinedHero)
-    console.log(`${inventory}`)
+    console.log(`Name: ${destinedHero.name}  Max Health: ${destinedHero.baseHealth}  Health: ${destinedHero.currentHealth}  Attack: ${destinedHero.attack}  Weapon: ${destinedHero.weapon}`)
+    console.log(`Inventory: ${inventory}`)
 }
 
-checkStatus()
+const rest = () => {
+    destinedHero.currentHealth += 20
+    if (destinedHero.currentHealth > destinedHero.baseHealth) {
+        destinedHero.currentHealth = destinedHero.baseHealth
+    }
+    if (random(1,10) > 7) {
+        fight()
+    }
+}
+
+
+console.log(`${destinedHero.name}? That sounds made up.  No matter. You've made your way to the infernal lair of the Dark Lord.  Find it, kill it, and save the realm. \n`)
+
+while(enemies[2].isAlive === true && destinedHero.currentHealth > 0) {
+    nonCombatOptions()
+}
+
+
