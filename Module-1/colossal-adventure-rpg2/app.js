@@ -143,4 +143,9 @@ const moveForward = () => {
     }
 }
 
-fight()
+const checkStatus = () => {
+    console.log(destinedHero)
+    console.log(`${inventory}`)
+}
+
+checkStatus()
