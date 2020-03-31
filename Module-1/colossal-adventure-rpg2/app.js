@@ -70,20 +70,34 @@ const deadHero = () => {
 }
 
 const loot = (enemyLoot) => {
-    let treasure = enemyLoot.drop[random(0,2)]
-    inventory.push(treasure)
-    console.log(`The ${enemyLoot.name} dropped a ${treasure}.`)
-    if (treasure === `Longsword`) {
-        destinedHero.attack = 10
-        destinedHero.weapon = `Longsword`
-    } else if (treasure === `Dagger` && destinedHero.weapon != `Longsword`) {
-        destinedHero.attack = 7
-        destinedHero.weapon = `Dagger`
-    } else if (treasure === `Armor`) {
-        destinedHero.health = 50
-    } else {
+    if (enemyLoot.health <= 0 && destinedHero.health > 0) {
+        let treasure = enemyLoot.drop[random(0,2)]
+        inventory.push(treasure)
+        console.log(`The ${enemyLoot.name} dropped a ${treasure}.`)
+        if (treasure === `Longsword`) {
+            destinedHero.attack = 10
+            destinedHero.weapon = `Longsword`
+        } else if (treasure === `Dagger` && destinedHero.weapon != `Longsword`) {
+            destinedHero.attack = 7
+            destinedHero.weapon = `Dagger`
+        } else if (treasure === `Armor`) {
+            destinedHero.health = 50
+        } else {
 
+        }
     }
+}
+
+const run = (runningFrom) => {
+    let runChance = random(1,10)
+    if (runChance > 7) {
+        let currentEnemyAttack = enemyAttack(runningFrom)
+        destinedHero.health -= currentEnemyAttack
+        console.log(`The ${runningFrom.name}'s attack does ${currentEnemyAttack} damage to you! \n`)
+    } else {
+        console.log(`You successfully escape.`)
+    }
+    return runChance
 }
 
 const fight = () => {
@@ -102,24 +116,24 @@ const fight = () => {
     while (currentEnemy.health > 0 && destinedHero.health > 0 ) {        
         console.log(`${currentEnemy.capitalName} Health: ${currentEnemy.health}        ${destinedHero.name} Health: ${destinedHero.health}`)
         let fightChoice = readline.keyIn(`Press A to Attack \nPress R to run \nWhat do?   `, {limit:`ar`})
-        if (fightChoice = `a`) {
+        if (fightChoice === `a`) {
             let currentAttack = attack()
             currentEnemy.health -= currentAttack
             console.log(`You deal ${currentAttack} damage to the ${currentEnemy.name}!`)
-        } else {
-            //running mechanic
-            console.log(`PLACEHOLDER`)
+            if (currentEnemy.health > 0 && destinedHero.health > 0) {
+                let currentEnemyAttack = enemyAttack(currentEnemy)
+                destinedHero.health -= currentEnemyAttack
+                console.log(`The ${currentEnemy.name}'s attack does ${currentEnemyAttack} damage to you! \n`)
+            }
+        } else if (fightChoice === `r`) {
+            let successOrFail = run(currentEnemy)
+            if (successOrFail < 8) {
+                break
+            }
         }  
-        if (currentEnemy.health > 0 && destinedHero.health > 0) {
-            let currentEnemyAttack = enemyAttack(currentEnemy)
-            destinedHero.health -= currentEnemyAttack
-            console.log(`The ${currentEnemy.name}'s attack does ${currentEnemyAttack} damage to you! \n`)
-        } else if (destinedHero.health > 0) {
-            console.log(`Congratulations, ${destinedHero.name}. You are victorious!`)
-        }         
     }
-    loot(currentEnemy)
     deadHero()
+    loot(currentEnemy)
 }
 
 const moveForward = () => {
@@ -129,3 +143,4 @@ const moveForward = () => {
     }
 }
 
+fight()
