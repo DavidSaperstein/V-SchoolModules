@@ -156,7 +156,7 @@ const fight = () => {
     if (currentEnemy != enemies[2]) {
         currentEnemy.currentHealth = currentEnemy.baseHealth
         console.log(`Congratulations! You are victorious!`)    
-    } else if (currentEnemy === enemies[2] && enemies[2].currentHealh <= 0) {
+    } else if (currentEnemy === enemies[2] && enemies[2].currentHealth <= 0) {
         console.log(`You have cleansed the realm of the evil that was the Dark Lord. You have my thanks.`)
     }
 }
@@ -170,7 +170,7 @@ const moveForward = () => {
 
 const checkStatus = () => {
     console.log(`Name: ${destinedHero.name}  Max Health: ${destinedHero.baseHealth}  Health: ${destinedHero.currentHealth}  Attack: ${destinedHero.attack}  Weapon: ${destinedHero.weapon}`)
-    console.log(`Inventory: ${inventory}`)
+    console.log(`Inventory: ${inventory.join(", ")}`)
 }
 
 const rest = () => {

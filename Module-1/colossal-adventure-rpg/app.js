@@ -1,5 +1,11 @@
 const readline = require('readline-sync');
 
+function rng(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
 const hero = {
     name: 'Destined Hero',
     health: 50,
@@ -56,6 +62,10 @@ const moveForward = (min, max) => {
 const goblinFight = (opponent) => {
     trueOpponent = opponent
     console.log(trueOpponent)
+const opponent = {}
+const goblinFight = () => {
+    opponent = dangers[0]
+    console.log(opponent)
     console.log(`As you make your way down up the spire, you come to a landing. Just a few feet down the dark corridor, you see a small green humanoid sitting by a campfire. The creature turns its horrid green facade in your direction, bellows an incoherant battle-cry, and charges toward you.`)
 
     while (trueOpponent.health > 0) {
@@ -83,6 +93,7 @@ function attack() {
 
 
 goblinFight(dangers[0])
+goblinFight()
 // while (darkLord.alive === true) {
 
 
