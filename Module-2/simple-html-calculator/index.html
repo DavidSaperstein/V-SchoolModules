@@ -5,31 +5,37 @@
 </head>
 <body>
     <header>
-        <h1>This is a Calculator</h1>
+        <h1 align="center">This is a Calculator</h1>
     </header>
     <main>
-        <div class="add">
+        <div class="calculator add">
             <form name="add-calculator">
-                <div id="add"></div>
-                <input type="number" name="first-add"/>
-                <input type="number" name="second-add"/>
-                <button>Add</button>                
+                <div class="input-container">
+                    <input class="input" type="number" name="first-add"/>
+                    <input class="input" type="number" name="second-add"/>
+                    <button class="button">Add</button>
+                </div>
+                <div class="answer">Sum:</div>                
             </form>
         </div>
-        <div class="subtract">
+        <div class="calculator subtract">
             <form name="subtract-calculator">
-                <div id="add"></div>
-                <input type="number" name="first-subract"/>
-                <input type="number" name="second-subract"/>
-                <button>Add</button>                
+                <div class="input-container">
+                    <input class="input" type="number" name="first-subract"/>
+                    <input class="input" type="number" name="second-subract"/>
+                    <button class="button">Subtract</button>
+                </div>
+                <div class="answer">Difference:</div>                               
             </form>
         </div>
-        <div class="multiply">
+        <div class="calculator multiply">
             <form name="multiply-calculator">
-                <div id="add"></div>
-                <input type="number" name="first-multiply"/>
-                <input type="number" name="second-multiply"/>
-                <button>Add</button>                
+                <div class="input-container">
+                    <input class="input" type="number" name="first-multiply"/>
+                    <input class="input" type="number" name="second-multiply"/>
+                    <button class="button">Multiply</button>
+                </div>
+                <div class="answer">Product:</div>                             
             </form>
         </div>
     </main>
