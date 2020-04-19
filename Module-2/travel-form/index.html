@@ -5,10 +5,40 @@
 </head>
 
 <header>
-
+    <h1 class="title">Who are you and where do you want to go?</h1>
 </header>
 
 <body>
+    <form name="travelForm">
+        First Name <input type="text" name="firstName">
+        <br>
+        Last Name <input type="text" name="lastName">
+        <br>
+        Age <input type="number" name="age">
+        <br>
+        Gender: 
+            Female <input class="gender" type="radio" name="gender" value="Female">
+            Male <input class="gender" type="radio" name="gender" value="Male">
+            Other <input class="gender" type="radio" name="gender" value="Other">
+        <br>
+        Destination
+        <select name="destination">
+            <option>Japan</option>
+            <option>Ontario</option>
+            <option>Your Mom's House</option>
+        </select>
+        <br>
+        Diet (select all that apply):
+        Kosher <input class="diet" type="checkbox" name="diet" value="Kosher">
+        Lactose-Free<input class="diet" type="checkbox" name="diet" value="Lactose-Free">
+        Vegetarian <input class="diet" type="checkbox" name="diet" value="Vegetarian">
+        <br>
+        <button>Submit</button>
+    </form>
+
+
+
+
 
 <script src="app.js"></script>
 </body>
