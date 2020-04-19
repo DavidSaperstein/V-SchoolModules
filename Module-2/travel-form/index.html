@@ -10,30 +10,40 @@
 
 <body>
     <form name="travelForm">
-        First Name <input type="text" name="firstName">
-        <br>
-        Last Name <input type="text" name="lastName">
-        <br>
-        Age <input type="number" name="age">
-        <br>
-        Gender: 
-            Female <input class="gender" type="radio" name="gender" value="Female">
-            Male <input class="gender" type="radio" name="gender" value="Male">
-            Other <input class="gender" type="radio" name="gender" value="Other">
-        <br>
-        Destination
+        <label for='firstName' class='firstname'>
+            First Name:
+            <input type="text" name="firstName">
+        </label>
+        
+
+        Last Name: <input type="text" name="lastName">
+        Age: <input type="number" name="age">
+
+        <p>Gender:</p>
+        <label for='gender' class='gender'>
+            <input type='radio' name='gender' value='female' id='gender'/> 
+            Female
+        </label>
+        <label for='gender' class='gender'>
+            <input type='radio' name='gender' value='male' id='gender'/> 
+            Male
+        </label>
+        <label for='gender' class='gender'>
+            <input type='radio' name='gender' value='other' id='gender'/> 
+            Other
+        </label>
+            
+        Destination:
         <select name="destination">
             <option>Japan</option>
             <option>Ontario</option>
             <option>Your Mom's House</option>
         </select>
-        <br>
         Diet (select all that apply):
-        Kosher <input class="diet" type="checkbox" name="diet" value="Kosher">
-        Lactose-Free<input class="diet" type="checkbox" name="diet" value="Lactose-Free">
-        Vegetarian <input class="diet" type="checkbox" name="diet" value="Vegetarian">
-        <br>
-        <button>Submit</button>
+        Kosher <input class="kosher diet" type="checkbox" name="diet" value="Kosher">
+        Lactose-Free<input class="lactose diet" type="checkbox" name="diet" value="Lactose-Free">
+        Vegetarian <input class="vegetarian diet" type="checkbox" name="diet" value="Vegetarian">
+        <button class="submit">Submit</button>
     </form>
 
 
