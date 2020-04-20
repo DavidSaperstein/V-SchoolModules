@@ -12,24 +12,28 @@
     <form name="travelForm">
         <label for='firstName' class='firstname'>
             First Name:
-            <input type="text" name="firstName">
+            <input type="text" name="firstName" required>
         </label>
         
+        <label for='lastName' class='lastname'>
+        Last Name: <input type="text" name="lastName" required>
+        </label>
 
-        Last Name: <input type="text" name="lastName">
-        Age: <input type="number" name="age">
+        <label for='age' class='age'>
+        Age: <input type="number" name="age" required>
+        </label>
 
         <p>Gender:</p>
-        <label for='gender' class='gender'>
-            <input type='radio' name='gender' value='female' id='gender'/> 
+        <label for='gender'>
+            <input class="clicks" type='radio' name='gender' value='Female' id='gender'/> 
             Female
         </label>
-        <label for='gender' class='gender'>
-            <input type='radio' name='gender' value='male' id='gender'/> 
+        <label for='gender'>
+            <input class="clicks" type='radio' name='gender' value='Male' id='gender'/> 
             Male
         </label>
-        <label for='gender' class='gender'>
-            <input type='radio' name='gender' value='other' id='gender'/> 
+        <label for='gender'>
+            <input class="clicks" type='radio' name='gender' value='Other' id='gender'/> 
             Other
         </label>
             
@@ -39,10 +43,21 @@
             <option>Ontario</option>
             <option>Your Mom's House</option>
         </select>
-        Diet (select all that apply):
-        Kosher <input class="kosher diet" type="checkbox" name="diet" value="Kosher">
-        Lactose-Free<input class="lactose diet" type="checkbox" name="diet" value="Lactose-Free">
-        Vegetarian <input class="vegetarian diet" type="checkbox" name="diet" value="Vegetarian">
+
+        <p>Diet (select all that apply):</p>
+
+        <label for='diet'>
+            <input class="clicks" type="checkbox" name="diet" value="Kosher">
+            Kosher 
+        </label>
+        <label for='diet'>
+            <input class="clicks" type="checkbox" name="diet" value="Lactose-Free">
+            Lactose-Free
+        </label>
+        <label for='diet'>
+            <input class="clicks" type="checkbox" name="diet" value="Vegetarian">
+            Vegetarian 
+        </label>
         <button class="submit">Submit</button>
     </form>
 
