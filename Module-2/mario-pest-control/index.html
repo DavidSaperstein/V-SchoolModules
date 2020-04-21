@@ -11,24 +11,36 @@
         <h2>Stomping Goombas Since 1985!</h2>
     </header>
     <main>
-        <form name="stomps">
-            <label for="enemy">
-                Choose Enemy Type:
-                <select name="enemy" id="enemy">
-                    <option>Goomba</option>
-                    <option>Bob-omb</option>
-                    <option>Cheep-cheep</option>
-                </select>
-            </label>
-            <img class="enemyPics" id="goombaPic" src="img/RPGgoomba.png">
-            <img class="enemyPics" id="bobombPic" src="img/RPGBob-omb.jpg">
-            <img class="enemyPics" id="cheepCheepPic" src="img/RPGCheep-Cheep.png">
-            <label for="totalStomps">
-                Total Stomps:
-                <input type="number" name="totalStomps" id="totalStomps">
-            </label>
-            <p>Total Price: </p>
+        <form name="stomps" id="stomps">
+            <div class="goomba">
+                <h3 class="enemyNames">Goomba</h3>
+                <img class="enemyPics" id="goombaPic" src="img/RPGgoomba.png">
+                <p class="prices" id="goombaPrice">5 Coins/Stomp</p>
+                <label for="totalStomps" class="totalStomps"  id="goombaStomps">
+                    Total Stomps:
+                    <input type="number" name="goombaStomps">
+                </label>    
+            </div>
+            <div class="bobomb">
+                <h3 class="enemyNames">Bob-omb</h3>
+                <img class="enemyPics" id="bobombPic" src="img/RPGBob-omb.png">
+                <p class="prices" id="bobombPrice">7 Coins/Stomp</p>
+                <label for="totalStomps" class="totalStomps"  id="bobombStomps">
+                    Total Stomps:
+                    <input type="number" name="bobombStomps">
+                </label>    
+            </div>
+            <div class="cheepCheep">
+                <h3 class="enemyNames">Cheep-cheep</h3>
+                <img class="enemyPics" id="cheepCheepPic" src="img/RPGCheep-Cheep.png">
+                <p class="prices" id="cheepCheepPrice">11 Coins/Stomp</p>
+                <label for="totalStomps" class="totalStomps" id="cheepCheepStomps">
+                    Total Stomps:
+                    <input type="number" name="cheepCheepStomps">
+                </label>    
+            </div>
         </form>
+        <p id="totalPrice">Total Price: <span id="finalPrice">0</span></p>
     </main>
     <footer>
         <ul>
