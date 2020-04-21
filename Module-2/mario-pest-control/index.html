@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="styles.css">
+<title>Mario Pest Control</title>
+</head>
+
+<body>  
+    <header>
+        <h1>Mario Pest Control</h1>
+        <h2>Stomping Goombas Since 1985!</h2>
+    </header>
+    <main>
+        <form name="stomps">
+            <label for="enemy">
+                Choose Enemy Type:
+                <select name="enemy" id="enemy">
+                    <option>Goomba</option>
+                    <option>Bob-omb</option>
+                    <option>Cheep-cheep</option>
+                </select>
+            </label>
+            <img class="enemyPics" id="goombaPic" src="img/RPGgoomba.png">
+            <img class="enemyPics" id="bobombPic" src="img/RPGBob-omb.jpg">
+            <img class="enemyPics" id="cheepCheepPic" src="img/RPGCheep-Cheep.png">
+            <label for="totalStomps">
+                Total Stomps:
+                <input type="number" name="totalStomps" id="totalStomps">
+            </label>
+            <p>Total Price: </p>
+        </form>
+    </main>
+    <footer>
+        <ul>
+            <li>Email: ItsAMeMario@gmail.com</li>
+            <li>Website: mario-pest-control.com</li>
+            <li>Address: 100 Extra Life St, Mushroom Kingdom</li>
+        </ul>
+    </footer>
+
+
+
+    <script src="app.js"></script>
+</body>
