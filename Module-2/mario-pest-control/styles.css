@@ -34,9 +34,9 @@ label {
 #stomps {
     display: grid;
     width: 100%;
-    height: 600px;
+    height: 500px;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 1fr;
+    grid-template-rows: 1fr 0.25fr;
     margin-top: calc(2vw);
 }
 
@@ -102,4 +102,12 @@ label {
 
 li {
     color: red;
+}
+
+#submit {
+    height: calc(3vw);
+    width: 7vw;
+    grid-column: 2;
+    margin: auto;
+    font-size: large;
 }
