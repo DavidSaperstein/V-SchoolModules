@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="styles.css">
+<title>Mario Pest Control</title>
+</head>
+
+<body>  
+    <header>
+        <h1>Mario Pest Control</h1>
+        <h2>Stomping Goombas Since 1985!</h2>
+    </header>
+    <main>
+        <form name="stomps" id="stomps">
+            <div class="goomba">
+                <h3 class="enemyNames">Goomba</h3>
+                <img class="enemyPics" id="goombaPic" src="img/RPGgoomba.png">
+                <p class="prices" id="goombaPrice">5 Coins/Stomp</p>
+                <label for="totalStomps" class="totalStomps"  id="goombaStomps">
+                    Total Stomps:
+                    <input type="number" name="goombaStomps">
+                </label>    
+            </div>
+            <div class="bobomb">
+                <h3 class="enemyNames">Bob-omb</h3>
+                <img class="enemyPics" id="bobombPic" src="img/RPGBob-omb.png">
+                <p class="prices" id="bobombPrice">7 Coins/Stomp</p>
+                <label for="totalStomps" class="totalStomps"  id="bobombStomps">
+                    Total Stomps:
+                    <input type="number" name="bobombStomps">
+                </label>    
+            </div>
+            <div class="cheepCheep">
+                <h3 class="enemyNames">Cheep-cheep</h3>
+                <img class="enemyPics" id="cheepCheepPic" src="img/RPGCheep-Cheep.png">
+                <p class="prices" id="cheepCheepPrice">11 Coins/Stomp</p>
+                <label for="totalStomps" class="totalStomps" id="cheepCheepStomps">
+                    Total Stomps:
+                    <input type="number" name="cheepCheepStomps">
+                </label>    
+            </div>
+            <button type="submit" name="submit" id="submit">Get Total Price</button>
+        </form>
+        
+        <p id="totalPrice">Total Price: <span id="finalPrice">0</span></p>
+    </main>
+    <footer>
+        <ul>
+            <li>Email: ItsAMeMario@gmail.com</li>
+            <li>Website: mario-pest-control.com</li>
+            <li>Address: 100 Extra Life St, Mushroom Kingdom</li>
+        </ul>
+    </footer>
+
+
+
+    <script src="app.js"></script>
+</body>
