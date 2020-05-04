@@ -6,11 +6,29 @@
 header {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    background-image: url(../zen-garden/images/header-background.jpg);
+    background-image:  url(../zen-garden/images/contours-opaque.png), url(../zen-garden/images/gridlines-opaque.png), url(../zen-garden/images/gridlines.png), url(../zen-garden/images/contours.png), url(../zen-garden/images/noise.png), url(../zen-garden/images/header-background.jpg);
+    background-size: 25%, 20%, 20%, 25%, cover, cover;
+    background-position: 0 0, 0 -80%, 0, -80%, 0 0;
+    height: 300px;
+}
+
+.header-left {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#titleImage {
+    display: block;
+    grid-column: 1;
+    height: 50px;
+    width: 50px;
 }
 
 .title {
     grid-column: 1;
+    height: 100px;
 }
 
 .header-right {
@@ -61,11 +79,13 @@ footer {
 #footerTop {
     width: 100vw;
     height: 100px;
-    background-image: url(../zen-garden/images/footer\ background.jpg)
+    background-image: url(../zen-garden/images/footer\ background.jpg);
+    grid-row: 1;
 }
 
 #footerBottom {
     width: 100vw;
     height: 100px;
     background-color: #134347;
+    grid-row: 2;
 }
