@@ -17,10 +17,17 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    color: ivory;
+    float: left;
+}
+
+#titleTextContainer {
+    display: inline-block;
+    float: left;
 }
 
 #titleImage {
-    display: block;
     grid-column: 1;
     height: 50px;
     width: 50px;
