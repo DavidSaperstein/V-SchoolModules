@@ -3,13 +3,46 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: "Verde Moderna";
+    src: url("../zen-garden/images/verdemoderna.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Julius Sans One";
+    src: url("../zen-garden/images/JuliusSansOne.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Libre Baskerville Normal";
+    src: url("../zen-garden/images/Libre-Baskerville-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Libre Baskerville Italic";
+    src: url("../zen-garden/images/Libre-Baskerville-italic.woff2") format("woff2");
+}
+
 header {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    background-image:  url(../zen-garden/images/contours-opaque.png), url(../zen-garden/images/gridlines-opaque.png), url(../zen-garden/images/gridlines.png), url(../zen-garden/images/contours.png), url(../zen-garden/images/noise.png), url(../zen-garden/images/header-background.jpg);
-    background-size: 25%, 20%, 20%, 25%, cover, cover;
-    background-position: 0 0, 0 -80%, 0, -80%, 0 0;
+    background-image: url(../zen-garden/images/contours-opaque.png), url(../zen-garden/images/gridlines-opaque.png), url(../zen-garden/images/noise.png), url(../zen-garden/images/header-background.jpg);
+    background-size: 10%, 15%, contain, cover;
+    background-position: center, center, center, center;
+    background-repeat: repeat, repeat, repeat, no-repeat;
     height: 300px;
+}
+
+.header-darkbar {
+    background-color: rgba(0,0,0,.25);
+    height: 3vh;
+    grid-column: 1/-1;
+    margin-bottom: 1vh;
+}
+
+.header-white-background {
+    background-color: rgba(255,255,255, 0.1);
+    grid-column: 1/-1;
 }
 
 .header-left {
@@ -17,29 +50,64 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     color: ivory;
-    float: left;
 }
 
-#titleTextContainer {
-    display: inline-block;
-    float: left;
+.title-container {
+    text-align: left;
 }
 
 #titleImage {
     grid-column: 1;
-    height: 50px;
-    width: 50px;
+    height: 120px;
+    width: 115px;
+    margin-right: 30px;
 }
 
 .title {
     grid-column: 1;
-    height: 100px;
+    height: auto;
+}
+
+#title {
+    font-family: Julius Sans One;
+    font-weight: 400;
+    font-size: calc(3.25vw);
+    padding-bottom: calc(.65vw)
+}
+
+#subtitle {
+    font-family: Libre Baskerville Italic;
+    color: rgba(255,255,255,0.6);
+    font-size: calc(1.6vw);
+    font-weight: 400;
+    padding-left: .2vw;
+    font-stretch: condensed;
 }
 
 .header-right {
     grid-column: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.view-all-container {
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 75%;
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.designs-background {
+    background-color: rgba(255, 255, 225, .15);
+}
+#arrow {
+    font-family: Verde Moderna;
+    line-height: 100%;
 }
 
 
