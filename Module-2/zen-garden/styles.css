@@ -23,42 +23,45 @@
     src: url("../zen-garden/images/Libre-Baskerville-italic.woff2") format("woff2");
 }
 
+body {
+    width: 100%;
+}
 header {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.98fr 1.02fr;
+    grid-template-rows: 13px 1fr;
     background-image: url(../zen-garden/images/contours-opaque.png), url(../zen-garden/images/gridlines-opaque.png), url(../zen-garden/images/noise.png), url(../zen-garden/images/header-background.jpg);
     background-size: 10%, 15%, contain, cover;
     background-position: center, center, center, center;
     background-repeat: repeat, repeat, repeat, no-repeat;
-    position: relative;
-    height: 300px;
+    height: 310px;
 }
 
 .header-darkbar {
     background-color: rgba(0,0,0,.25);
-    height: 1.5vh;
-    grid-column: 1/-1;
+    height: 13px;
+    grid-column: 1/3;
+    grid-row: 1;
     margin-bottom: 1vh;
     box-shadow: .5vh inset black;
-    position: absolute;
-    z-index: +1;
 }
 
 .header-white-background {
     background-color: rgba(255,255,255, 0.1);
-    grid-column: 1/-1;
-    grid-row: 1/-1;
-    position: absolute;
-    z-index: +2;
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .header-left {
     grid-column: 1;
+    grid-row: 2;
     display: flex;
     justify-content: center;
     align-items: center;
     color: ivory;
-    margin-right: 53px;
+    margin-right: 115px;
+    padding-bottom: 10px;
+
 }
 
 .title-container {
@@ -67,8 +70,8 @@ header {
 
 #titleImage {
     grid-column: 1;
-    height: 130px;
-    width: 130px;
+    height: 125px;
+    width: 125px;
     margin-right: 2.3vw;
 }
 
@@ -87,9 +90,10 @@ header {
 #subtitle {
     font-family: Libre Baskerville Italic, sans-serif;
     color: rgba(255,255,255,0.6);
-    font-size: 1.6vw;
+    font-size: 1.5vw;
     font-weight: 300;
     font-stretch: condensed;
+    letter-spacing: .03vw;
     padding-left: 5px;
 }
 
@@ -100,6 +104,7 @@ header {
 
 .header-right {
     grid-column: 2;
+    grid-row: 2;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -110,9 +115,8 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 75%;
-    margin-right: 12px;
     font-size: 20px;
+    padding-right: 15px;
 }
 
 .designs-background {
@@ -127,59 +131,223 @@ header {
 }
 
 #designs {
-    width: 30vw;
-    height: 4.45vw;
-    font-size: 1.2vw;
+    width: 22.5vw;
+    height: 4.75vw;
+    font-size: 1.27vw;
     font-family: Julius Sans One;
     font-weight: 400;
+    margin-right: 1px;
 }
 
 #arrow {
     font-family: Verde Moderna;
     line-height: 118%;
-    width: 5.7vw;
-    height: 4.5vw;
+    height: 4.75vw;
+    width: 4.75vw;
     font-size: 2.7vw;
-    margin-left: 1.5px;
-    margin-right: 5px;
 }
 
 
 main {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.98fr 1.02fr;
     grid-template-rows: repeat(3, auto);
 }
 
-a:hover {
+.designs-background:hover {
     opacity: 1;
 }
 
-main > div {
-    width: 100%;
-    height: 200px;
-    background-color: red;
-    border: 2px solid black;
-}
-
-.top {
-    grid-row: 1;
-}
-
-.middle {
-    grid-row: 2;
-}
-
-.bottom {
-    grid-row: 3;
-}
-
 .left {
+    display: flex;
+    flex-direction: column;
+    padding-left: 9.8vw;
+    padding-right: 5.48vw;
+    color: #325050;
+    font-family: Libre Baskerville Normal;
+    font-size: .95vw;
+    font-weight: 100;
+    letter-spacing: 0.01vw;
+    line-height: 30px;
+}
+
+.top-left {
+    grid-row: 1;
     grid-column: 1;
 }
 
+.main-elements {
+    margin-bottom: 15px;
+}
+
+.top-left-h3 {
+    margin-top: 10px;
+}
+
+.top-left-a {
+    text-decoration: none;
+    color: #a9b995;
+    padding: 5px;
+}
+
+.top-left-a:hover {
+    background-color: #0d8ba1;
+    transition: background-color ease-in-out .2s;
+}
+
+.top-left-anchor-span {
+    font-family: Verde Moderna;
+    background: #d9e1cd;
+} 
+
+.top-main-elements {
+    margin-top: 65px;
+}
+
+#topLeftSecondP {
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-family: Julius Sans One;
+    font-weight: 200;
+    font-size: 1.8vw;
+    letter-spacing: .05vw;
+}
+
+.h3-needs-bottom-margins {
+    margin-bottom: 20px;
+}
+
+.main-spans {
+    text-decoration: underline dotted;
+}
+
 .right {
+    background-color: #E5EDE8;
+    font-family: Julius Sans One;
+}
+
+#topUL {
+    list-style: none;
+    padding-top: 70px;
+}
+
+ul a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top-right {
+    grid-row: 1;
     grid-column: 2;
+}
+
+.top-right-li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin-left: 5.5vw;
+    margin-right: 10vw;
+    border-bottom: solid 1px #d9e3dc;
+}
+
+.middle-right-li {
+    margin-left: 5.5vw;
+    margin-right: 10vw;
+    margin-bottom: 25px;
+    border-bottom: solid 1px gray;
+}
+
+/* .middle-right-li a{
+    padding: 50px 0;
+} */
+
+#middleUL {
+    margin-top: 50px;
+    list-style: none;
+    text-decoration: none;
+}
+
+#bottomLi {
+    border: none;
+}
+
+.top-right-h4, .middle-a {
+    color: #607476;
+    font-weight: 100;
+    font-size: 1.28vw;
+    margin-bottom: 6px;
+    margin-top: 10px;
+}
+.top-right-h5 {
+    font-family: Libre Baskerville Normal;
+    color: #616857;
+    font-size: .9vw;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.side-bar-authors {
+    font-style: italic;
+    color: #c0cac3;
+}
+
+.middle-left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.middle-right {
+    grid-column: 2;
+    grid-row: 2;
+    background-image: url(../zen-garden/images/contours-opaque.png);
+    background-size: cover;
+    background-color: rgba(138, 188, 159, 0.4);
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0 0 0;
+}
+
+#middleBackground {
+    grid-column: 1/-1;
+    grid-row: 2;
+    background-image: url(../zen-garden/images/bamboo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(138,188,159,0.5);
+}
+
+.bottom-left {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#benefitsP, #lastRequirementsP {
+    margin-bottom: 65px;
+}
+
+.some-h3s-need-top-margins {
+    margin-top: 10px;
+}
+
+.middle-bottom-anchors {
+    text-decoration: none;
+    color: #0d8ba1;
+}
+
+.middle-bottom-anchors:hover {
+    transition: all 0.25s ease-out;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.middle-bottom-anchors:visited {
+    color: #1a5952;
+}
+
+.bottom-right {
+    grid-column: 2;
+    grid-row: 3;
 }
 
 footer {
