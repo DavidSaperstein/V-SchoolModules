@@ -26,6 +26,7 @@
 body {
     width: 100%;
 }
+
 header {
     display: grid;
     grid-template-columns: 1.98fr 1.02fr;
@@ -90,7 +91,7 @@ header {
 #subtitle {
     font-family: Libre Baskerville Italic, sans-serif;
     color: rgba(255,255,255,0.6);
-    font-size: 1.5vw;
+    font-size: 1.5em;
     font-weight: 300;
     font-stretch: condensed;
     letter-spacing: .03vw;
@@ -127,13 +128,13 @@ header {
     text-decoration: none;
     color: inherit;
     opacity: .7;
-    font-size: 1vw;
+    font-size: 1em;
 }
 
 #designs {
     width: 22.5vw;
     height: 4.75vw;
-    font-size: 1.27vw;
+    font-size: 1em;
     font-family: Julius Sans One;
     font-weight: 400;
     margin-right: 1px;
@@ -151,7 +152,7 @@ header {
 main {
     display: grid;
     grid-template-columns: 1.98fr 1.02fr;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(6, auto);
 }
 
 .designs-background:hover {
@@ -165,7 +166,7 @@ main {
     padding-right: 5.48vw;
     color: #325050;
     font-family: Libre Baskerville Normal;
-    font-size: .95vw;
+    font-size: 1em;
     font-weight: 100;
     letter-spacing: 0.01vw;
     line-height: 30px;
@@ -211,7 +212,7 @@ main {
 h3 {
     font-family: Julius Sans One;
     font-weight: 200;
-    font-size: 1.8vw;
+    font-size: 2em;
     letter-spacing: .05vw;
 }
 
@@ -256,14 +257,16 @@ ul a {
     margin-right: 10vw;
     margin-bottom: 25px;
     border-bottom: solid 1px gray;
+    padding: 5px 0 30px 0;
 }
 
-/* .middle-right-li a{
-    padding: 50px 0;
-} */
+#middle-first-li {
+    border-top: solid 1px gray;
+    padding-top: 30px;
+}
 
 #middleUL {
-    margin-top: 50px;
+    margin-top: 120px;
     list-style: none;
     text-decoration: none;
 }
@@ -275,14 +278,14 @@ ul a {
 .top-right-h4, .middle-a {
     color: #607476;
     font-weight: 100;
-    font-size: 1.28vw;
+    font-size: 1.3em;
     margin-bottom: 6px;
     margin-top: 10px;
 }
 .top-right-h5 {
     font-family: Libre Baskerville Normal;
     color: #616857;
-    font-size: .9vw;
+    font-size: .9em;
     font-weight: 200;
     margin-bottom: 10px;
 }
@@ -305,7 +308,7 @@ ul a {
     background-color: rgba(138, 188, 159, 0.4);
     display: flex;
     flex-direction: column;
-    padding: 100px 0 0 0;
+    /* padding: 100px 0 0 0; */
 }
 
 #middleBackground {
@@ -351,20 +354,332 @@ ul a {
 }
 
 footer {
+    grid-column: 1/3;
+    grid-row: 4/5;
     display: grid;
     grid-template-rows: repeat(2, auto);
 }
 
 #footerTop {
-    width: 100vw;
-    height: 100px;
-    background-image: url(../zen-garden/images/footer\ background.jpg);
+    height: 310px;
     grid-row: 1;
+    background-image: url(../zen-garden/images/contours-opaque.png), url(../zen-garden/images/gridlines-opaque.png), url(../zen-garden/images/noise.png), url(../zen-garden/images/header-background.jpg);
+    background-size: 10%, 15%, contain, cover;
+    background-position: center, center, center, center;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+
+}
+
+#white-footer-top {
+    background-color: rgba(255,255,255, 0.1);
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#white-footer-top a:hover {
+    text-decoration: underline;
 }
 
 #footerBottom {
-    width: 100vw;
     height: 100px;
     background-color: #134347;
     grid-row: 2;
+}
+
+#footerP1, #footerP2 {
+    font-family: Libre Baskerville italic;
+    font-style: italic;
+    font-size: 2em;
+    padding: 0 130px;
+    line-height: 60px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#footerP span {
+    padding-left: 30px;
+}
+
+#footerP1 a, #footerP2 a {
+    font-family: Libre Baskerville normal;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#footerP a:hover {
+    text-decoration: underline;
+}
+
+#footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 37px 25vw;
+}
+
+.bottom-symbols {
+    font-family: Verde Moderna;
+    font-size: 4.4em;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+#foot1:hover::before {
+    content: "%"
+}
+
+#foot1::before {
+    content: "5"
+}
+
+#foot2:hover::before {
+    content: "#"
+}
+
+#foot2::before {
+    content: "3"
+}
+
+#foot3:hover::before {
+    content: "C"
+}
+
+#foot3::before {
+    content: "c"
+}
+
+#foot4:hover::before {
+    content: "A"
+}
+
+#foot4::before {
+    content: "a"
+}
+
+#foot5:hover::before {
+    content: "G"
+}
+
+#foot5::before {
+    content: "g"
+}
+
+@media only screen and (max-width: 1131px) {
+
+    header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 1fr;
+        height: 230px;    
+    }
+
+    .header-darkbar {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .header-white-background {
+        grid-column: 1;
+        grid-row: 1;
+        padding-top: 13px;
+    }
+
+    .header-left {
+        grid-row: 1;
+        display: flex;
+        justify-content: center;
+        padding-left: 100px;
+        padding-top: 20px;
+    }
+
+    .header-right {
+        grid-column: 1;
+    }
+
+    #titleImage {
+        grid-row: 1;
+        height: 85px;
+        width: 85px;
+        padding-bottom: 50px;
+        padding-left: 10px;
+        opacity: 0.6;
+    }
+
+    #subtitle {
+        padding-left: 30px;
+        font-size: 1.2em;
+    }
+
+    #designs {
+        width: 100%;
+        margin-right: 0;
+        height: 100%;
+        font-size: .9em;
+    }
+
+    .designs-background {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 225, .3);
+    }
+    
+    .view-all-container {
+        width: 100%;
+        padding-right: 0;
+        height: 100%;
+    }
+
+    #arrow {
+        height: 100%;
+    }
+
+    .left {
+        padding-left: 9.8vw;
+        padding-right: 120px;
+        font-size: .8em;
+        line-height: 27px;
+    }
+    
+    .top-main-elements {
+        margin-top: 27px;
+    }
+
+    .main-elements {
+        margin-bottom: 6px;
+    }
+    
+
+    h3 {
+        font-size: 1.5em;
+    }
+    
+    .right {
+        display: grid
+    }
+    
+    .top-left {
+        grid-row: 1;
+        grid-column: 1/3;
+    }
+    
+    .top-right {
+        grid-row: 5;
+        grid-column: 1/3;
+    }
+
+    #topUL, #middleUL {
+        padding-top: 10px;
+        padding-left: 8vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        margin-top: 0px;
+    }
+
+    #middleUL {
+        padding-top: 10px;
+        padding-left: 8vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        margin-top: 0px;
+        background-image: url(../zen-garden/images/bamboo.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+    .top-right-h4, .middle-a {
+        font-size: 1em;
+    }
+    
+    .top-right-h5 {
+        font-size: .8em;
+        margin-bottom: 0px;
+    }
+    
+    .middle-right-li {
+        margin-left: 5.5vw;
+        margin-right: 10vw;
+        margin-bottom: 0px;
+        border-bottom: solid 1px gray;
+        padding: 15px 0;
+    }
+
+    #middle-first-li {
+        border-top: none;
+        padding-top: 10px;
+    }
+    
+    .middle-right {
+        grid-column: 1/3;
+        grid-row: 6;
+    }
+
+    #middleBottomLi {
+        border-bottom: none;
+    }
+
+    .left-column {
+        grid-column: 1;
+    }
+
+    .right-column {
+        grid-column: 2;
+    }
+
+    .middle-left {
+        grid-column: 1/3;
+        grid-row: 2;
+        color: black;
+    }
+    
+    #benefitsP, #lastRequirementsP {
+        margin-bottom: 30px;
+    }
+    
+
+    .bottom-left {
+        grid-column: 1/3;
+        grid-row: 3;
+    }
+
+    .bottom-right {
+        display: none;
+        grid-column: 2;
+        grid-row: 3;
+    }
+    
+
+    footer {
+        grid-column: 1/3;
+        grid-row: 4;
+    }
+    
+    #footerTop {
+        height: 175px;    
+    }
+
+    #footerBottom {
+        height: 50px;
+        padding: 37px 15vw;
+    }
+
+    #footerP1, #footerP2 {
+        font-family: Libre Baskerville italic;
+        font-style: italic;
+        font-size: calc(.3vw + 1em);
+        padding: 0 10vw;
+        line-height: 45px;
+    }
+
+    .bottom-symbols {
+        font-size: 3em;
+        padding: 0px 20px;
+    }
+    
+    
 }
