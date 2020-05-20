@@ -1,4 +1,4 @@
-const readline = require('readline')
+const readline = require('readline-sync')
 
 class Player {
     constructor (name = 'Player1', totalCoins = 0, status = 'Small', hasStar = false, gameActive = true) {
@@ -9,12 +9,12 @@ class Player {
         this.gameActive = gameActive
     }
 
-    // setName(namePicked) {
-    //     const playerName = require('readline-sync'),
-    //     marioOrLuigi = ['Mario', 'Luigi'],
-    //     choice = readlineSync.keyInSelect(marioOrLuigi, 'Are you Mario or Luigi?')
-    //     this.name = choice
-    // }
+    setName() {
+        // const playerName = require('readline-sync'),
+        const marioOrLuigi = ['Mario', 'Luigi']
+        const choice = readline.keyInSelect(marioOrLuigi, 'Are you Mario or Luigi?')
+        this.name = marioOrLuigi[choice]
+    }
 
     gotHit() {
         if (this.hasStar) {
@@ -70,16 +70,15 @@ const whatHappened = (player) => {
     } else if (eventNumber === 1) {
         player.gotPowerup()
         player.print()
-    } else if (eventNumber === 2) {
+    } else {
         player.addCoin()
         player.print()
-    } else {
-
     }
 }
 
 
 const newPlayer = new Player()
+newPlayer.setName()
 let game
 const run = () => {
     game = setInterval(gameOver, 2000)

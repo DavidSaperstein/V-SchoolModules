@@ -123,7 +123,7 @@ const populatePeople = (names) => {
     return names.map((name) => {
         name = name.split(" ")
         const [firstName, lastName] = name
-        return {firstName: firstName, lastName: lastName}
+        return {firstName, lastName}
     })
 }
 
