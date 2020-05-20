@@ -1,0 +1,43 @@
+{
+    "appetizers": [{
+        "name": "mozarella sticks",
+        "ingredients": ["mozarella cheese", "breadcrumbs", "eggs", "salt"],
+        "description": "fried sticks made of cheese"
+        },
+        {
+        "name": "loaded potato skins",
+        "ingredients": ["russet potato", "bacon", "cheddar cheese", "sour cream", "green onion", "spices"],
+        "description": "unpeeled potato halves, hollowed and dressed with goodies"
+        }
+    ],
+    "cold sandwiches": [{
+        "name": "mint-cucumber tomato",
+        "ingredients": ["sourdough bread", "cucumber", "tomato", "mint leaves"],
+        "description": "minty cucumbery summer goodness"
+    },
+    {
+        "name": "chicken ceasar pitas",
+        "ingredients": ["chicken breast", "romaine lettuce", "rice", "caesar vinaigratte", "wheat pita", "spices"],
+        "description": "it's like a chicken ceasar salad in a pita"
+    }],
+    "desserts": [{
+        "name": "donut cheesecake",
+        "ingredients": ["mini doughnuts", "flour", "sugar", "cinnamon", "butter", "cream cheese"],
+        "description": "Creamy donut cheesecake with a vanilla custard sauce and strawberry puree. Topped with a skewer of warm cinnamon-sugar donuts."
+    },
+    {
+        "name": "red velvet cake",
+        "ingredients": ["icing", "buttermilk", "cream cheese", "flour", "vanilla", "butter", "egg", "sugar", "vinegar", "powdered sugar"],
+        "description": "A three-tiered red velvet cake that’s a Friday night celebration in itself, layered with cream cheese frosting then topped with whipped cream and candy sprinkles. Served alongside a scoop of vanilla bean ice cream." 
+    }],
+    "drinks": [{
+        "name": "coke",
+        "ingredients": ["sugar", "sugar", "high-fructose corn syrup", "food coloring"],
+        "description": "it's a coke"
+    },
+    {
+        "name": "sprite",
+        "ingredients": ["sugar", "love"],
+        "description": "it's sprite, man, what do you want?"
+    }]
+}
