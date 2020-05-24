@@ -19,9 +19,6 @@ const showList = (listArray) => {
             container.setAttribute("class", "todo-card")
             document.getElementById('list').appendChild(container)
             const title = createH1(todo, "title")
-            if (todo.completed) {
-                title.setAttribute("class", "strikethrough")
-            }
             container.appendChild(title)
             if (todo.description) {
                 const description = createH1(todo, "description")
@@ -39,6 +36,14 @@ const showList = (listArray) => {
             }
             const newDelete = deleteButton(todoID)
             container.appendChild(newDelete)
+            const newCheckbox = checkbox(todoID)
+            container.appendChild(newCheckbox)
+            if (todo.completed) {
+                title.setAttribute("class", "strikethrough")
+                newCheckbox.checked = true
+            }
+
+
         })
     }
 }
@@ -69,6 +74,32 @@ const clearList = () => {
     }
 }
 
+const checkbox = (id) => {
+    const newCheckbox = document.createElement('input')
+    newCheckbox.type = 'checkbox'
+    document.body.appendChild(newCheckbox)
+    newCheckbox.addEventListener('change', function(event) {
+        event.preventDefault()
+        if(this.checked) {
+            axios.put(`https://api.vschool.io/davidsaperstein/todo/${id}`, {
+                completed: true
+            })
+                .then(res => getTodo())
+                .catch(err => console.log(err))
+        } else {
+            axios.put(`https://api.vschool.io/davidsaperstein/todo/${id}`, {
+                completed: false
+            })
+                .then(res => getTodo())
+                .catch(err => console.log(err))
+        }
+    })
+    return newCheckbox
+
+
+
+}
+
 const deleteButton = (id) => {
     const newDelete = document.createElement('button')
     newDelete.innerText = 'X'
@@ -81,3 +112,4 @@ const deleteButton = (id) => {
 }
 
 getTodo()
+
