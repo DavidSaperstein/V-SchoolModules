@@ -14,6 +14,7 @@ const showList = (listArray) => {
     clearList()
     if (listArray.length > 0) {
         listArray.map(todo => {
+            const todoID = todo._id
             const container = document.createElement("div")
             container.setAttribute("class", "todo-card")
             document.getElementById('list').appendChild(container)
@@ -36,6 +37,8 @@ const showList = (listArray) => {
                 img.style.width = "250px"
                 container.appendChild(img)
             }
+            const newDelete = deleteButton(todoID)
+            container.appendChild(newDelete)
         })
     }
 }
@@ -64,6 +67,17 @@ const clearList = () => {
     while(el.firstChild) {
         el.removeChild(el.firstChild)
     }
+}
+
+const deleteButton = (id) => {
+    const newDelete = document.createElement('button')
+    newDelete.innerText = 'X'
+    newDelete.addEventListener('click', function() {
+        axios.delete(`https://api.vschool.io/davidsaperstein/todo/${id}`)
+            .then(res => getTodo())
+            .catch(err => console.log(err))
+    })
+    return newDelete
 }
 
 getTodo()
