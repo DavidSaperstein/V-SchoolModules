@@ -9,3 +9,9 @@
 .strikethrough {
     text-decoration: line-through;
 }
+
+#form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
