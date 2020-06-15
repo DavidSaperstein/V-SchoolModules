@@ -1,0 +1,25 @@
+.todo-card {
+    margin: 20px 10px;
+    background-color: red;
+    width: 300px;
+    font-size: 1em;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+#delete {
+    width: 100px;
+    text-align: center;
+}
