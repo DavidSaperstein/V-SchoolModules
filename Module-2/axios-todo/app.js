@@ -6,7 +6,11 @@ const getTodo = () => {
 
 const createH1 = (listItem, key) => {
     const element = document.createElement("h1")
-    element.textContent = listItem[key]
+    if (key === "price") {
+    element.textContent = `$${listItem[key]}`
+    } else {
+        element.textContent = listItem[key]
+    }
     return element
 }
 
@@ -76,7 +80,9 @@ const clearList = () => {
 
 const checkbox = (id) => {
     const newCheckbox = document.createElement('input')
+    newCheckbox.setAttribute('class', 'list-buttons')
     newCheckbox.type = 'checkbox'
+    newCheckbox.title = 'Is This Complete?'
     document.body.appendChild(newCheckbox)
     newCheckbox.addEventListener('change', function(event) {
         event.preventDefault()
@@ -95,14 +101,12 @@ const checkbox = (id) => {
         }
     })
     return newCheckbox
-
-
-
 }
 
 const deleteButton = (id) => {
     const newDelete = document.createElement('button')
-    newDelete.innerText = 'X'
+    newDelete.setAttribute('id', 'delete')
+    newDelete.innerText = 'Delete To-Do'
     newDelete.addEventListener('click', function() {
         axios.delete(`https://api.vschool.io/davidsaperstein/todo/${id}`)
             .then(res => getTodo())
