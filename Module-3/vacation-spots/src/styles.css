@@ -1,0 +1,23 @@
+.spotcard {
+    height: 150px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Spring {
+    background-color: green
+}
+
+.Summer {
+    background-color: orange
+}
+
+.Fall {
+    background-color: brown
+}
+
+.Winter {
+    background-color: blue
+}

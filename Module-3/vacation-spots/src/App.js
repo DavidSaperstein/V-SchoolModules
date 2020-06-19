@@ -1,5 +1,6 @@
 import React from "react"
 import Spot from "./Spot"
+import './styles.css'
 
 export default function App() {
     let vacationSpots = [
@@ -25,7 +26,7 @@ export default function App() {
           timeToGo: "Spring"
         }
       ]
-    const spotComponents = vacationSpots.map(spot => <Spot spot={spot} />)
+    const spotComponents = vacationSpots.map(spot => <Spot key={spot.place} spot={spot} />)
 
     return (
         <div>
