@@ -6,8 +6,8 @@ export default function Header() {
         <div>
             <NavBar />
             <div className="header-container">
-                <h1>Clean Blog</h1>
-                <h2>A Blog Theme by Start Bootstrap</h2>
+                <h1 className="headings heading">Clean Blog</h1>
+                <h2 className="headings subheading">A Blog Theme by Start Bootstrap</h2>
             </div>
         </div>
     )

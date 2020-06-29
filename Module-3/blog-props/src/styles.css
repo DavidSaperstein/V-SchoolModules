@@ -1,12 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
-
-.header-container {
-    background-image: url('https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/img/home-bg.jpg?raw=true');
-}
-
-.body {
-    width: 100%;
-}
 
 .navbar {
     font-family: 'Open Sans', sans-serif;
@@ -15,7 +12,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-top: 20px;
+    margin: 20px 0 20px 0;
     color: #212529;
 }
 
@@ -35,4 +32,35 @@
     padding: 0 10px 0 10px;
     width: 25%;
     margin-right: 300px;
+}
+
+.header-container {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/img/home-bg.jpg?raw=true');
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    height: 532px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.headings {
+    color: #fff;
+}
+
+.heading {
+    font-size: 80px;
+    font-family: 'Open Sans';
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.subheading {
+    font-size: 24px;
+    font-weight: 300;
+    font-family: 'Open Sans';
+    line-height: 1.1;
+    margin: 10px;
 }
