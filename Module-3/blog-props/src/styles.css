@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+
+.header-container {
+    background-image: url('https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/img/home-bg.jpg?raw=true');
+}
+
+.body {
+    width: 100%;
+}
+
+.navbar {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    color: #212529;
+}
+
+.navlink:hover {
+    color: #0085a1;
+}
+
+.left-navbar-container {
+    font-size: 1.25rem;
+    width: 25%;
+    margin-left: 300px;
+}
+.right-navbar-container {
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+    padding: 0 10px 0 10px;
+    width: 25%;
+    margin-right: 300px;
+}
