@@ -29,8 +29,8 @@ const posts = postData.map(post => <BlogPost key={post.title} title={post.title}
 
 export default function BlogList() {
     return (
-        <div>
+        <ul>
             {posts}
-        </div>
+        </ul>
     )
 }
