@@ -25,12 +25,10 @@ const postData = [
     }
 ]
 
-const posts = postData.map(post => <BlogPost key={post.title} title={post.title} subTitle={post.subTitle} author={post.author} date={post.date} />)
-
 export default function BlogList() {
     return (
-        <ul>
-            {posts}
+        <ul className="blog-container">
+            {postData.map(post => <BlogPost key={post.title} title={post.title} subTitle={post.subTitle} author={post.author} date={post.date} />)}
         </ul>
     )
 }
