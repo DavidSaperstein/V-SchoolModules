@@ -27,8 +27,14 @@ const postData = [
 
 export default function BlogList() {
     return (
-        <ul className="blog-container">
-            {postData.map(post => <BlogPost key={post.title} title={post.title} subTitle={post.subTitle} author={post.author} date={post.date} />)}
-        </ul>
+        <div>
+            <ul className="blog-container">
+                {postData.map(post => <BlogPost key={post.title} title={post.title} subTitle={post.subTitle} author={post.author} date={post.date} />)}
+                <div className="older-container">
+                    <a>OLDER POSTS &#8594;</a>
+                </div>
+            </ul>
+            <hr></hr>
+        </div>
     )
 }

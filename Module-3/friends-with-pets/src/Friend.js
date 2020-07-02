@@ -1,8 +1,7 @@
 import React from "react"
 import Pet from "./Pet"
 
-export default function Friend(props){
-    const {name, age, pets} = props
+export default function Friend({name, age, pets}){
     return (
         <div className='card'>
             <div className='friends'>

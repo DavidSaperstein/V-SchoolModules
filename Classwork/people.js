@@ -51,3 +51,43 @@ printName(people)
 
 // printName ()
 // This is Ameron, he is 33 years old.
+
+
+
+const yarnData = [
+    {
+        id: 1,
+        name: "red",
+        rgb: 123
+    },
+    {
+        id: 2,
+        name: "blue",
+        rgb: 234
+    },
+    {
+        id: 3,
+        name: "yellow",
+        rgb: 678
+    },
+    {
+        id: 4,
+        name: "yellow",
+        rgb: 987
+    },
+    {
+        id: 5,
+        name: "yellow",
+        rgb: 324
+    }
+]
+
+const newYarn = yarn.map( yarn => {
+    if (!newYarn.find(yarn.name)) {
+        yarn.rgb = [yarn.rgb]
+        newYarn.push(yarn)
+    } else (
+        let id = yarn.id
+
+    )
+})
