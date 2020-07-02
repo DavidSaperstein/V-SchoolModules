@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: "Verde Moderna";
+    src: url("./verdemoderna.woff") format("woff");
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
 .navbar {
@@ -115,4 +120,50 @@ hr {
 
 .author:hover {
     color: #0085a1;
+}
+
+ul > div {
+    display: flex;
+    color: #fff;
+    background-color: #0085a1;
+    border-color: #0085a1;
+    justify-content: center;
+    width: 177px;
+    height: 53px;
+    align-self: flex-end;
+    align-items: center;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-radius: 0;
+    line-height: 1.5;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+ul > div:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0 65px 0;
+}
+
+.symbol-container {
+    display: flex;
+    justify-content: space-between;
+    width: 730px;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: #6c757d!important;
+    line-height: 1.5;
+    font-weight: 400;
 }

@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "./Header"
 import BlogList from "./BlogList"
+import Footer from "./Footer"
 import "./styles.css"
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
         <div>
             <Header />
             <BlogList />
+            <Footer />
         </div>
     )
 }
