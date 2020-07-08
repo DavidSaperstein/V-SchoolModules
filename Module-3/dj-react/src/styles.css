@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    background-color: blue;
+}
+
 .flex-container {
     display: flex;
     height: 1000px;
@@ -18,5 +22,16 @@
     width: 500px;
     height: 500px;
     text-align: center;
+    margin-bottom: 10px;
+}
+
+.squares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.buttons {
     margin-bottom: 10px;
 }
