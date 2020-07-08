@@ -10,6 +10,8 @@ export default class App extends React.Component {
         }
         this.smallTimeDJ = this.smallTimeDJ.bind(this)
         this.partyDJ = this.partyDJ.bind(this)
+        this.professionalDJleft = this.professionalDJleft.bind(this)
+        this.professionalDJright = this.professionalDJright.bind(this)
     }
 
     smallTimeDJ() {
@@ -28,6 +30,23 @@ export default class App extends React.Component {
         })
     }
 
+    professionalDJleft() {
+        this.setState(prevState => {
+            return {
+                colors: [prevState.colors[0], prevState.colors[1], 'blue', prevState.colors[3]]
+            }
+        })
+    }
+
+    professionalDJright() {
+        this.setState(prevState => {
+            return {
+                colors: [prevState.colors[0], prevState.colors[1], prevState.colors[2], 'blue']
+            }
+        })
+    }
+
+
     render() {
         console.log(this.state.colors)
         return (
@@ -37,6 +56,10 @@ export default class App extends React.Component {
                 </div>
                 <button className='buttons' onClick={this.smallTimeDJ}>Small Time DJ</button>
                 <button className='buttons' onClick={this.partyDJ}>Party DJ</button>
+                <div className='professional-container'>
+                    <button className='buttons left' onClick={this.professionalDJleft}>Professional DJ Left</button>
+                    <button className='buttons right' onClick={this.professionalDJright}>Professional DJ Right</button>
+                </div>
             </div>
         )
     }

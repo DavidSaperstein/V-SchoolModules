@@ -35,3 +35,16 @@ body {
 .buttons {
     margin-bottom: 10px;
 }
+
+.professional-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    margin-right: 5px;
+}
+
+.right {
+    margin-left: 5px;
+}
