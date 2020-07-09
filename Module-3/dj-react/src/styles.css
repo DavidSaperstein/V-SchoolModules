@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: blue;
+    background-color: green;
 }
 
 .flex-container {
@@ -47,4 +47,10 @@ body {
 
 .right {
     margin-left: 5px;
+}
+
+.big-time-container {
+    display: flex;
+    width: 400px;
+    justify-content: space-evenly;
 }
