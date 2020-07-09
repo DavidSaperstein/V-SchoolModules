@@ -1,6 +1,27 @@
 import React from "react"
 import Square from "./Square"
 import './styles.css'
+import dragonballSoundFile from './dragonball.mp3'
+import letitgo from './letitgo.mp3'
+import otherfriends from './otherfriends.mp3'
+import theotherside from './theotherside.mp3'
+
+const dragonBall = new Audio(dragonballSoundFile)
+const letItGo = new Audio(letitgo)
+const otherFriends = new Audio(otherfriends)
+const theOtherSide = new Audio(theotherside)
+const songs = [dragonBall, letItGo, otherFriends, theOtherSide]
+
+const stopAudio = (audio) => {
+    audio.pause()
+    audio.currentTime = 0
+}
+
+const stopBigTimeDJ = () => songs.forEach((song) => stopAudio(song))
+
+
+
+
 
 export default class App extends React.Component {
     constructor() {
@@ -51,9 +72,8 @@ export default class App extends React.Component {
     }
 
     bigTimeDJ1() {
-        const dragonBall = new Audio("./dragonball.mp3")
+        stopBigTimeDJ()
         dragonBall.play()
-        console.log(dragonBall)
         this.setState(prevState => {
             return {
                 colors: ['red', prevState.colors[1], prevState.colors[2], prevState.colors[3]]
@@ -62,6 +82,8 @@ export default class App extends React.Component {
     }
 
     bigTimeDJ2() {
+        stopBigTimeDJ()
+        letItGo.play()
         this.setState(prevState => {
             return {
                 colors: [prevState.colors[0], 'red', prevState.colors[2], prevState.colors[3]]
@@ -70,6 +92,8 @@ export default class App extends React.Component {
     }
 
     bigTimeDJ3() {
+        stopBigTimeDJ()
+        otherFriends.play()
         this.setState(prevState => {
             return {
                 colors: [prevState.colors[0], prevState.colors[1], 'red', prevState.colors[3]]
@@ -78,6 +102,8 @@ export default class App extends React.Component {
     }
 
     bigTimeDJ4() {
+        stopBigTimeDJ()
+        theOtherSide.play()
         this.setState(prevState => {
             return {
                 colors: [prevState.colors[0], prevState.colors[1], prevState.colors[2], 'red']
