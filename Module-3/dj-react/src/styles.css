@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    background-color: green;
+}
+
 .flex-container {
     display: flex;
     height: 1000px;
@@ -19,4 +23,34 @@
     height: 500px;
     text-align: center;
     margin-bottom: 10px;
+}
+
+.squares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.buttons {
+    margin-bottom: 10px;
+}
+
+.professional-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    margin-right: 5px;
+}
+
+.right {
+    margin-left: 5px;
+}
+
+.big-time-container {
+    display: flex;
+    width: 400px;
+    justify-content: space-evenly;
 }
