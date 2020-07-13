@@ -1,9 +1,10 @@
 import React from 'react'
 
 export default function Die(props) {
+    const {num} = props
     return (
-        <div>
-            
+        <div className='die'>
+            {num}
         </div>
     )
 }
