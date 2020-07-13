@@ -1,19 +1,12 @@
 import React from "react"
+import DiceBox from './DiceBox'
 import "./styles.css" 
 
-export default class App extends React.Component {
-    constructor () {
-        super()
-        this.state = {
-
-        }
-    }
-
-    render () {
-        return (
-            <div className='dice-container'>
-                this is an app
-            </div>
-        )
-    }
+export default function App() {
+    return (
+        <div className='dicebox-container'>
+            <h1>Roll the Dice!</h1>
+            <DiceBox />
+        </div>
+    )
 }
