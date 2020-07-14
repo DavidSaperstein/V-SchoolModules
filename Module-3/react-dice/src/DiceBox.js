@@ -5,7 +5,28 @@ export default class DiceBox extends React.Component {
     constructor() {
         super()
         this.state = {
-            nums: [1, 1, 1, 1, 1]
+            dice: [
+                {
+                    num: 1,
+                    selected: false
+                },
+                {
+                    num: 1,
+                    selected: false
+                },           
+                {
+                    num: 1,
+                    selected: false
+                },
+                {
+                    num: 1,
+                    selected: false
+                },
+                {
+                    num: 1,
+                    selected: false
+                }
+            ]
         }
     }
 
@@ -13,22 +34,51 @@ export default class DiceBox extends React.Component {
         return Math.floor(Math.random() * (6-1+1)) + 1
     }
 
-    rollDice = () => {
-        this.setState(prevState => {
-            const newNums = prevState.nums.map(num => this.randomNumGen())
-            return {nums: newNums}
+    handleRollDice = () => {
+        const newDice = this.state.dice.map(die => {
+            if(die.selected === false) {
+                const newNum = this.randomNumGen()
+                console.log(newNum)
+                return {num: newNum, selected: false}
+            } else {
+                return die
+            }
+        })
+        this.setState(prevState => {            
+            return {dice: newDice}
         })
     }
+    
+    // handleSelectDice = (event) => {
+    //     const target = event.target
+    //     const selector = false
+    //     if(event.target.selected === false) {
+    //         selector = true
+    //     } else {
+    //         selector = false
+    //     }
+    //     this.setState(prevState => {
+    //         return {dice[target.id].selected: selector}
+    //     })
+    // }
 
+    handleSelectedDice = (id) => {
+        this.setState(prevState => {
+            const newState = prevState
+            newState.dice[id].selected = !prevState.dice[id].selected
+            return {newState}
+        })
+    }
+    
     render() {
-        console.log(this.state.nums)
+        console.log(this.state.dice)
         return (
             <div>
                 <div className='dice-container'>
-                    {this.state.nums.map((num, i) => <Die key={i} num={num}/>)}
+                    {this.state.dice.map((die, i) => <Die key={i} id={i} num={die.num} isSelected={die.selected} selector={this.handleSelectedDice}/>)}
                 </div>
                 <div className='button-container'>
-                    <button id='button' onClick={() => this.rollDice()}>Roll</button>
+                    <button id='button' onClick={() => this.handleRollDice()}>Roll</button>
                 </div>
             </div>
         )

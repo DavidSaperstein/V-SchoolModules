@@ -25,9 +25,12 @@ h1 {
 }
 
 .die {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     align-items: center;
+    justify-content: center;
+    justify-items: center;
     height: 200px;
     width: 200px;
     font-size: 50px;
@@ -42,4 +45,46 @@ h1 {
 
 #button {
     font-size: 25px;
+}
+
+.pip {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.top-left {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.top-middle {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.top-right {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.middle {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.bottom-left {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.bottom-middle {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.bottom-right {
+    grid-row: 3;
+    grid-column: 3;
 }
