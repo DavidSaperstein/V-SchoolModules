@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    margin-top: 5vh;
+    width: 38vw;
+    height: 35vh;
+    border: 2px solid black;
+    border-radius: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 7vw;
+}
+
+input {
+    width: 47%;
+    min-width: 275px;
+    border: 2px solid black;
+}
+
+textarea {
+    width: 100%;
+    min-width: 275px;
+    height: 15vh;
+    border: 2px solid black;
+}
+
+button {
+    margin: auto;
+    width: 15%;
+    height: 8%;
+    border: 2px solid black;
+    border-radius: 12%;
+}
