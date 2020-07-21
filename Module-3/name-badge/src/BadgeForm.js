@@ -4,13 +4,13 @@ export default class BadgeForm extends React.Component {
     constructor() {
         super()
         this.state = {
-            firstName: 'First Name',
-            lastName: 'Last Name',
-            email: 'E-mail',
-            placeOfBirth: 'Place of Birth',
-            phone: 'Phone',
-            favoriteFood: 'Favorite Food',
-            about: 'Tell us about yourself',
+            firstName: '',
+            lastName: '',
+            email: '',
+            placeOfBirth: '',
+            phone: '',
+            favoriteFood: '',
+            about: '',
             completeBadges: []
         }
     }
@@ -20,65 +20,96 @@ export default class BadgeForm extends React.Component {
         this.setState({[name]:value})
     } 
 
-    handleClick = () => {
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.setState(({firstName, lastName, email, placeOfBirth, phone, favoriteFood, about, completeBadges}) => {
+            return {
+                firstName: '',
+                lastName: '',
+                email: '',
+                placeOfBirth: '',
+                phone: '',
+                favoriteFood: '',
+                about: '',
+                completeBadges: [{firstName, lastName, email, placeOfBirth, phone, favoriteFood, about}, ...completeBadges]
+            }
+        })
+    }
 
+    handleValidation = (name) => {
+        return {color: name.length >= 3 ? 'green' : 'red'}
     }
 
     render() {
+        const {firstName, lastName, email, placeOfBirth, phone, favoriteFood, about, completeBadges} = this.state
         return (
-            <form>
-                <input
-                    name='firstName' 
-                    type='text' 
-                    value={this.state.firstName}
-                    minLength='3'
-                    onChange = {(e) => this.handleChange(e)}
-                    required
-                />
-                <input
-                    name='lastName'
-                    type='text'
-                    value={this.state.lastName}
-                    minlength='3'
-                    onChange = {(e) => this.handleChange(e)}
-                    required
-                />
-                <input
-                    name='email'
-                    type='email'
-                    value={this.state.email}
-                    minlength='3'
-                    onChange = {(e) => this.handleChange(e)}
-                    required
-                />
-                <input
-                    name='placeOfBirth'
-                    type='text'
-                    value={this.state.placeOfBirth}
-                    minlength='3'
-                    onChange = {(e) => this.handleChange(e)}
-                    required
-                />
-                <input
-                    name='phone'
-                    type='tel'
-                    value={this.state.phone}
-                    onChange = {(e) => this.handleChange(e)}
-                    required
-                />
-                <input
-                    name='favoriteFood'
-                    type='text'
-                    value={this.state.favoriteFood}
-                    minlength='3'
-                    onChange = {(e) => this.handleChange(e)}
-                    required
-                />
-                <textarea 
-                    value={this.state.about}
-                    onChange = {(e) => this.handleChange(e)}
-                />
-            </form>
+            <>
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        name='firstName' 
+                        type='text' 
+                        value={firstName}
+                        placeholder='First Name'
+                        onChange = {this.handleChange}
+                        minLength='3'
+                        style={this.handleValidation(firstName)}
+                        required
+                    />
+                    <input
+                        name='lastName'
+                        type='text'
+                        value={lastName}
+                        placeholder='Last Name'
+                        minLength='3'
+                        onChange = {this.handleChange}
+                        required
+                        style={this.handleValidation(lastName)}
+                    />
+                    <input
+                        name='email'
+                        type='email'
+                        value={this.state.email}
+                        placeholder='E-mail'
+                        minLength='3'
+                        onChange = {this.handleChange}
+                        required
+                    />
+                    <input
+                        name='placeOfBirth'
+                        type='text'
+                        value={this.state.placeOfBirth}
+                        placeholder='Place of Birth'
+                        minLength='3'
+                        onChange = {this.handleChange}
+                        required
+                    />
+                    <input
+                        name='phone'
+                        type='number'
+                        value={this.state.phone}
+                        placeholder='Phone'
+                        onChange = {this.handleChange}
+                        required
+                    />
+                    <input
+                        name='favoriteFood'
+                        type='text'
+                        value={this.state.favoriteFood}
+                        placeholder='Favorite Food'
+                        minLength='3'
+                        onChange = {this.handleChange}
+                        required
+                    />
+                    <textarea
+                        name='about'
+                        value={this.state.about}
+                        placeholder='Tell us about yourself'
+                        onChange = {this.handleChange}
+                    />
+                    <button>Submit</button>
+                </form>
+                <div>{completeBadges.length >= 1 && completeBadges[0].firstName}</div>
+            </>
         )
     }
 }
