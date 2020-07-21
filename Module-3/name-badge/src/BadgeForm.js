@@ -1,4 +1,5 @@
 import React from 'react'
+import BadgeCard from './BadgeCard'
 
 export default class BadgeForm extends React.Component {
     constructor() {
@@ -22,16 +23,26 @@ export default class BadgeForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.setState(({firstName, lastName, email, placeOfBirth, phone, favoriteFood, about, completeBadges}) => {
+        this.setState((prevState) => {
+            let newBadge = {
+                firstName: prevState.firstName, 
+                lastName: prevState.lastName, 
+                email: prevState.email, 
+                placeOfBirth: prevState.placeOfBirth, 
+                phone: prevState.phone, 
+                favoriteFood: prevState.favoriteFood, 
+                about: prevState.about
+            }
+
             return {
-                firstName: '',
-                lastName: '',
-                email: '',
-                placeOfBirth: '',
-                phone: '',
-                favoriteFood: '',
-                about: '',
-                completeBadges: [{firstName, lastName, email, placeOfBirth, phone, favoriteFood, about}, ...completeBadges]
+                    completeBadges: [newBadge, ...prevState.completeBadges],
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    placeOfBirth: '',
+                    phone: '',
+                    favoriteFood: '',
+                    about: ''
             }
         })
     }
@@ -60,33 +71,35 @@ export default class BadgeForm extends React.Component {
                         type='text'
                         value={lastName}
                         placeholder='Last Name'
-                        minLength='3'
                         onChange = {this.handleChange}
-                        required
                         style={this.handleValidation(lastName)}
+                        minLength='3'
+                        required
                     />
                     <input
                         name='email'
                         type='email'
-                        value={this.state.email}
+                        value={email}
                         placeholder='E-mail'
-                        minLength='3'
                         onChange = {this.handleChange}
+                        style={this.handleValidation(email)}
+                        minLength='3'
                         required
                     />
                     <input
                         name='placeOfBirth'
                         type='text'
-                        value={this.state.placeOfBirth}
+                        value={placeOfBirth}
                         placeholder='Place of Birth'
-                        minLength='3'
                         onChange = {this.handleChange}
+                        style={this.handleValidation(placeOfBirth)}
+                        minLength='3'
                         required
                     />
                     <input
                         name='phone'
                         type='number'
-                        value={this.state.phone}
+                        value={phone}
                         placeholder='Phone'
                         onChange = {this.handleChange}
                         required
@@ -94,21 +107,34 @@ export default class BadgeForm extends React.Component {
                     <input
                         name='favoriteFood'
                         type='text'
-                        value={this.state.favoriteFood}
+                        value={favoriteFood}
                         placeholder='Favorite Food'
-                        minLength='3'
                         onChange = {this.handleChange}
+                        style={this.handleValidation(favoriteFood)}
+                        minLength='3'
                         required
                     />
                     <textarea
                         name='about'
-                        value={this.state.about}
+                        value={about}
                         placeholder='Tell us about yourself'
                         onChange = {this.handleChange}
                     />
                     <button>Submit</button>
                 </form>
-                <div>{completeBadges.length >= 1 && completeBadges[0].firstName}</div>
+                <div>{completeBadges.map((badge, i) => 
+                    <BadgeCard 
+                        key={i} 
+                        id={i} 
+                        firstName={badge.firstName} 
+                        lastName={badge.lastName} 
+                        email={badge.email} 
+                        placeOfBirth={badge.placeOfBirth} 
+                        phone={badge.phone} 
+                        favoriteFood={badge.favoriteFood} 
+                        about={badge.about} 
+                    />)}
+                </div>
             </>
         )
     }

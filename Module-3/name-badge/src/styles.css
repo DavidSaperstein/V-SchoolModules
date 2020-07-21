@@ -7,27 +7,29 @@ body {
     justify-content: center;
 }
 
-form {
+form, .badge-container {
     margin-top: 5vh;
+    margin-bottom: 5vh;
     width: 38vw;
+    min-width: 315px;
     height: 35vh;
     border: 2px solid black;
     border-radius: 1%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    padding: 20px 7vw;
+    padding: 20px 7vw 20px 7vw;
 }
 
-input {
-    width: 47%;
+input, .badge-container p {
+    width: 17vw;
     min-width: 275px;
     border: 2px solid black;
 }
 
 textarea {
-    width: 100%;
+    width: 35.4vw;
     min-width: 275px;
     height: 15vh;
     border: 2px solid black;
@@ -39,4 +41,19 @@ button {
     height: 8%;
     border: 2px solid black;
     border-radius: 12%;
+}
+
+.badge-container {
+    margin-top: 0;
+    margin-bottom: 5vh;
+}
+
+.big-badge {
+    width: 100%;
+    border: 2px solid black;
+}
+
+#about {
+    width: 35.4vw;
+    height: 15vh;
 }
