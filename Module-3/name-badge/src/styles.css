@@ -57,3 +57,11 @@ button {
     width: 35.4vw;
     height: 15vh;
 }
+
+.big-badge-background:nth-child(odd) > .big-badge{
+    background-color: red;
+}
+
+.big-badge-background:nth-child(even) > .big-badge{
+    background-color: lightblue;
+}

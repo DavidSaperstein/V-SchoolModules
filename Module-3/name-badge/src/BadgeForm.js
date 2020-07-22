@@ -122,7 +122,7 @@ export default class BadgeForm extends React.Component {
                     />
                     <button>Submit</button>
                 </form>
-                <div>{completeBadges.map((badge, i) => 
+                <div className='list-container'>{completeBadges.map((badge, i) => 
                     <BadgeCard 
                         key={i} 
                         id={i} 

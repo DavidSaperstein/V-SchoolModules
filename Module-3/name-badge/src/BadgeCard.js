@@ -4,7 +4,7 @@ export default function BadgeCard(props) {
     console.log(props)
     const {id, firstName, lastName, email, placeOfBirth, phone, favoriteFood, about} = props
     return (
-        <>
+        <div className='big-badge-background'>
             <div className='big-badge'>
                 <h1>Badge: {id+1}</h1>
             </div>
@@ -16,6 +16,6 @@ export default function BadgeCard(props) {
                 <p>Email: {email}</p>
                 <p id='about'>{about}</p>
             </div>
-        </>
+        </div>
     )
 }
