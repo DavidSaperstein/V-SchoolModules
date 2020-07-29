@@ -30,7 +30,6 @@ export default class MemeGenerator extends Component {
     handleClick = (e) => {
         e.preventDefault()
         const newMeme = this.state.allMemeImgs[Math.floor(Math.random() * Math.floor(this.state.allMemeImgs.length))].url
-        console.log(newMeme)
         this.setState({randomImg: newMeme})
     }
 
