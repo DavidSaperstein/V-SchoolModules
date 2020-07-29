@@ -27,6 +27,13 @@ export default class MemeGenerator extends Component {
         this.setState({[name]: value})
     }
 
+    handleClick = (e) => {
+        e.preventDefault()
+        const newMeme = this.state.allMemeImgs[Math.floor(Math.random() * Math.floor(this.state.allMemeImgs.length))].url
+        console.log(newMeme)
+        this.setState({randomImg: newMeme})
+    }
+
     render() {
         return (
             <div>
@@ -45,8 +52,13 @@ export default class MemeGenerator extends Component {
                         value={this.state.bottomText}
                         onChange={this.handleChange}
                     />
-                    <button>Gen</button>
+                    <button onClick={this.handleClick}>Gen</button>
                 </form>
+                <div className='meme'>
+                    <img src={this.state.randomImg} alt='' />
+                    <h2 className='top'>{this.state.topText}</h2>
+                    <h2 className='bottom'>{this.state.bottomText}</h2>
+                </div>
             </div>
         )
     }
