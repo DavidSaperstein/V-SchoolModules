@@ -8,11 +8,11 @@ const FormContextProvider = (props) => {
     const [images, setImages] = useState([])
 
     const submit = () => {
-        setImages = (prevImages => [...prevImages, {title, url, description}])
+        setImages(prevImages => [...prevImages, {title, url, description}])
     }
 
     return (
-        <FormContextProvider value={title, url, description, images, submit}>
+        <FormContextProvider value={title, setTitle, url, setUrl, description, setDescription, images, submit}>
             {props.children}
         </FormContextProvider>
     )
