@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-const FormContext = React.createContext
+const FormContext = React.createContext()
 
 const FormContextProvider = (props) => {
     const [title, setTitle] = useState('')
@@ -12,9 +12,9 @@ const FormContextProvider = (props) => {
     }
 
     return (
-        <FormContextProvider value={title, setTitle, url, setUrl, description, setDescription, images, submit}>
+        <FormContext.Provider value={title, setTitle, url, setUrl, description, setDescription, images, submit}>
             {props.children}
-        </FormContextProvider>
+        </FormContext.Provider>
     )
 }
 

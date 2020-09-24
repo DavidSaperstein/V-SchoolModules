@@ -6,14 +6,15 @@ const ImageList = (props) => {
     const {images} = useContext(FormContext)
     return (
         <div>
-            {images.map((image, i) => 
-                <ImageCard 
-                    key={i}
-                    title={image.title}
-                    url={image.url}
-                    description={image.description}
-                />
-            )}
+            {images && images.length > 0 && (
+                images.map((image, i) => 
+                    <ImageCard 
+                        key={i}
+                        title={image.title}
+                        url={image.url}
+                        description={image.description}
+                    />
+            ))}
         </div>
     )
 }
