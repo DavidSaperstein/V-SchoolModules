@@ -10,7 +10,7 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://www.colr.org/json/color/random?timestamp=${new Date().getTime()}')
+        axios.get(`http://www.colr.org/json/color/random?timestamp=${new Date().getTime()}`)
             .then(response => {
                 this.setState({color: response.data.colors[0].hex})
             })
