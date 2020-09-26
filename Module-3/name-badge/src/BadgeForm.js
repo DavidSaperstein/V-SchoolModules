@@ -24,14 +24,15 @@ export default class BadgeForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         this.setState((prevState) => {
+            const {firstName, lastName, email, placeOfBirth, phone, favoriteFood, about} = prevState
             let newBadge = {
-                firstName: prevState.firstName, 
-                lastName: prevState.lastName, 
-                email: prevState.email, 
-                placeOfBirth: prevState.placeOfBirth, 
-                phone: prevState.phone, 
-                favoriteFood: prevState.favoriteFood, 
-                about: prevState.about
+                firstName, 
+                lastName, 
+                email, 
+                placeOfBirth, 
+                phone, 
+                favoriteFood, 
+                about
             }
 
             return {
