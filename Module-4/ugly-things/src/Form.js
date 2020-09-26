@@ -6,10 +6,12 @@ const Form = (props) => {
     (FormContext)
     console.log(setTitle)
     return (
-        <form onSubmit={submit} className='form'>
-            <input name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
-            <input name='url' value={url} onChange={(e) => setUrl(e.target.value)}/>
-            <input name='description' value={description} onChange={(e) => setDescription(e.target.value)}/>
+        <form onSubmit={submit}>
+            <div className='input-container'>
+                <input name='title' value={title} placeholder='Title' onChange={(e) => setTitle(e.target.value)}/>
+                <input name='url' value={url} placeholder='Url' onChange={(e) => setUrl(e.target.value)}/>
+                <input name='description' value={description} placeholder='Description' onChange={(e) => setDescription(e.target.value)}/>
+            </div>
             <button>Submit</button>
         </form>
     )

@@ -13,7 +13,7 @@ const FormContextProvider = (props) => {
     }
 
     return (
-        <FormContext.Provider value={{title, setTitle, url, setUrl, description, setDescription, images, submit}}>
+        <FormContext.Provider value={{title, setTitle, url, setUrl, description, setDescription, images, setImages, submit}}>
             {props.children}
         </FormContext.Provider>
     )
