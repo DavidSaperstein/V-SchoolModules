@@ -7,10 +7,10 @@ const ImageList = (props) => {
     return (
         <div className='images'>
             {images && images.length > 0 && (
-                images.map((image, i) => 
+                images.map((image) => 
                     <ImageCard 
-                        key={i}
-                        id={i}
+                        key={image.id}
+                        id={image.id}
                         title={image.title}
                         url={image.url}
                         description={image.description}

@@ -4,12 +4,12 @@ import ImageList from './ImageList'
 import './styles.css'
 
 const App = (props) => {
-    return (
-        <div className='app-container'>
-            <Form />
-            <ImageList />
-        </div>
-    )
+  return (
+    <div className='app-container'>
+      <Form isEdit={false}/>
+      <ImageList />
+    </div>
+  )
 }
 
 export default App

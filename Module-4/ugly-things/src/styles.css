@@ -9,22 +9,41 @@
     align-items: center;
 } */
 
-form {
-    background-color: red;
+.header-form {
+    background-color: #03071E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 20vh;
+    border-bottom: 1px solid black;
+    min-width: 150px;
+}
+
+body {
+    background-color: #370617;
+}
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50vw;
+    justify-content: space-evenly;
+}
+
+.edit-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 20vh;
 }
 
-.input-container {
-    margin-bottom: 20px;
-}
-
-input {
-    margin: 10px;
+.edit-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 ::placeholder {
@@ -32,7 +51,67 @@ input {
 }
 
 .images {
-    background-color: blue;
     width: 100vw;
-    height: 50vh;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+img {
+    max-width: 25vw;
+    min-width: 150px;
+}
+
+.image-card {
+    display: flex;
+    width: 30vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 0;
+    min-width: 150px;
+}
+
+.card {
+    margin-bottom: 5px;
+}
+
+.card-h1 {
+    background-color: #D00000;
+    border: 3px solid black;
+}
+
+.title {
+    font-size: 1.4em;
+    padding: 0 5px;
+}
+
+.description {
+    font-size: 1em;
+    padding: 0 5px;
+}
+
+.edit-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.edit-input {
+    width: 65%;
+}
+
+.buttons {
+    height: 100px;
+}
+
+button {
+    width: 100px;
+    margin: 0 10px;
+}
+
+label {
+    background-color: #D00000;
+    border: 1px solid black;
 }
