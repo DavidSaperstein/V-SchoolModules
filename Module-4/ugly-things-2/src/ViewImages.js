@@ -15,6 +15,8 @@ const ViewImages = (props) => {
                     description={image.description}
                     url={image.url}
                     id={image.id}
+                  // Fixing the "key" prop warning  
+                    key={image.id}
                 />
             )}
         </div>

@@ -13,7 +13,7 @@ const CommentCard = (props) => {
                 id={props.id}
                 isEdit={canEditComment}
                 setCanEditComment={setCanEditComment}
-                setNewcomments={props.setNewcomments}
+                setNewComments={props.setNewComments}
                 />
             ) : (
                 <p>{props.content}</p>                    

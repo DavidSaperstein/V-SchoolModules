@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 
 const CommentForm = (props) => {
-
     const [newContent, setNewContent] = useState(props.isEdit ? props.content : '')
     const [nextId, setNextId] = useState(1)
 
