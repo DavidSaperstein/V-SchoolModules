@@ -52,16 +52,19 @@ const ImageForm = (props) => {
           onChange={(e) => setNewTitle(e.target.value)}
           type='text'
           value={newTitle}
+          placeholder="Title"
         />
         <input
           onChange={(e) => setNewUrl(e.target.value)}
           type='text'
           value={newUrl}
+          placeholder="Image URL"
         />
         <input
           onChange={(e) => setNewDescription(e.target.value)}
           type='text'
           value={newDescription}
+          placeholder="Description"
         />
         <button>{isEdit ? 'Save' : 'Submit'}</button>
       </form>
