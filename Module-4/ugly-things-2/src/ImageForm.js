@@ -7,7 +7,7 @@ const ImageForm = (props) => {
   const [newUrl, setNewUrl] = useState(isEdit ? url : '')
   const [newDescription, setNewDescription] = useState(isEdit ? description : '')
   const [nextId, setNextId] = useState(1)
-  const {images, setImages} = useContext(ImageContext)
+  const {setImages} = useContext(ImageContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()

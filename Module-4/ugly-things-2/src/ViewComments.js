@@ -8,6 +8,7 @@ const ViewComments = (props) => {
                 <CommentCard 
                     content={comment.content}
                     id={comment.id}
+                    key={comment.id}
                     setNewComments={props.setNewComments}
                 />
             )}

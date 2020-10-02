@@ -4,19 +4,19 @@ import ImageCard from './ImageCard'
 
 const ViewImages = (props) => {
 
-    const {images, setImages} = useContext(ImageContext)
-    console.log(images)
+    const {images} = useContext(ImageContext)
+    const {title, description, url, id} = images
 
     return (
         <div>
             {images.map(image => 
                 <ImageCard 
-                    title={image.title}
-                    description={image.description}
-                    url={image.url}
-                    id={image.id}
+                    title={title}
+                    description={description}
+                    url={url}
+                    id={id}
                   // Fixing the "key" prop warning  
-                    key={image.id}
+                    key={id}
                 />
             )}
         </div>

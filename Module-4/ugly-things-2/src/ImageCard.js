@@ -1,16 +1,16 @@
 import React, {useContext, useState} from 'react'
 import {ImageContext} from './imageContext'
 import ImageForm from './ImageForm'
-import CommentCard from './CommentCard'
 import CommentForm from './CommentForm'
 import ViewComments from './ViewComments'
 
 const ImageCard = (props) => {
     
-    const {images, setImages} = useContext(ImageContext)
+    const {setImages} = useContext(ImageContext)
 
     const [canEdit, setCanEdit] = useState(false)
     const [newComments, setNewComments] = useState([])
+    const [nextCommentId, setNextCommentId] = useState(1)
     const [canAddComment, setCanAddComment] = useState(false)
 
     const handleDelete = () => {
@@ -24,15 +24,20 @@ const ImageCard = (props) => {
             <h1>{props.title}</h1>
             <h1>{props.description}</h1>
             <img 
-                alt={props.description}
-                src={props.url} 
+                alt={"Not Found"}
+                src={props.url ? props.url : 'https://http.cat/404'} 
             />
-            <ViewComments comments={newComments} setNewComments={setNewComments}/>
+            <ViewComments 
+                comments={newComments} 
+                setNewComments={setNewComments}
+            />
             {canAddComment ? (
                 <CommentForm 
                     isEdit={false}
+                    nextCommentId={nextCommentId}
                     setNewComments={setNewComments}
                     setCanAddComment={setCanAddComment}
+                    setNextCommentId={setNextCommentId}
                 />
             ) : (
                 <button onClick={(e) => setCanAddComment(!canAddComment)}>
@@ -50,11 +55,7 @@ const ImageCard = (props) => {
                 />
             ) : (
                 <>
-                    <button 
-                        onClick={() => setCanEdit(!canEdit)}
-                    >
-                        Edit
-                    </button>
+                    <button onClick={() => setCanEdit(!canEdit)}>Edit</button>
                     <button onClick={() => handleDelete()}>Delete</button>
                 </>
             )}

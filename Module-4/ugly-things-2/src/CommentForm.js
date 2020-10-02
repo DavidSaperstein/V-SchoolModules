@@ -2,12 +2,17 @@ import React, {useState} from 'react'
 
 const CommentForm = (props) => {
     const [newContent, setNewContent] = useState(props.isEdit ? props.content : '')
-    const [nextId, setNextId] = useState(1)
 
     const handleAddComment = (e) => {
         e.preventDefault()
-        props.setNewComments(prevComments => [...prevComments, {content: newContent, id: nextId}])
-        setNextId(nextId + 1)
+        props.setNewComments(prevComments => [
+            ...prevComments, 
+            {
+                content: newContent, 
+                id: props.nextCommentId
+            }
+        ])
+        props.setNextCommentId(prevNextCommentId => prevNextCommentId + 1)
         setNewContent('')
         props.setCanAddComment(prevCanAddComment => !prevCanAddComment)
     }

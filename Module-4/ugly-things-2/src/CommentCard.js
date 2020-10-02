@@ -5,6 +5,13 @@ const CommentCard = (props) => {
     
     const [canEditComment, setCanEditComment] = useState(false)
 
+    const handleDelete = (e) => {
+        e.preventDefault()
+        props.setNewComments(prevNewComments => {
+            return prevNewComments.filter(comment => comment.id !== props.id)
+        })
+    }
+
     return (
         <div>
             {canEditComment ? (
@@ -18,8 +25,12 @@ const CommentCard = (props) => {
             ) : (
                 <p>{props.content}</p>                    
             )}
-            <button onClick={(e) => setCanEditComment(!canEditComment)}>Edit</button>
-            <button>X</button>
+            <button onClick={(e) => setCanEditComment(!canEditComment)}>
+                Edit
+            </button>
+            <button onClick={handleDelete}>
+                X
+            </button>
         </div>
     )
 }
