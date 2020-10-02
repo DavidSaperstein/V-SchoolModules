@@ -25,7 +25,7 @@ const ImageCard = (props) => {
   }
 
   const handleEdit = (id) => {
-    canEdit ? setCanEdit(false) : setCanEdit(true)
+    setCanEdit(prevCanEdit => !prevCanEdit)
   }
 
   const handleAddComment = () => {
