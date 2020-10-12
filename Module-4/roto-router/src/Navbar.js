@@ -1,4 +1,4 @@
-import react from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 
 const Navbar = (props) => {
@@ -8,9 +8,11 @@ const Navbar = (props) => {
       <Link to='/'>
         Home
       </Link>
+
       <Link to='/about'>
         About
       </Link>
+
       <Link to='/services'>
         Services
       </Link>

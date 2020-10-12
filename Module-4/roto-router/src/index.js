@@ -1,4 +1,4 @@
-import react from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import {BrowserRouter as Router} from 'react-router-rom'
 import App from './App'
