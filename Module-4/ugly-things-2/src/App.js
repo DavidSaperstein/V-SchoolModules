@@ -6,7 +6,14 @@ import './styles.css'
 const App = (props) => {
   return (
     <div>
-      <ImageForm isEdit={false}/>
+      <ImageForm 
+        isEdit={false}
+        initialState={{
+          description: '',
+          title: '',
+          url: ''
+        }}
+      />
       <ViewImages />
     </div>
   )

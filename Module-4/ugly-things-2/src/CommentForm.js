@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 const CommentForm = (props) => {
-    const [newContent, setNewContent] = useState(props.isEdit ? props.content : '')
+    const [newContent, setNewContent] = useState('')
 
     const handleAddComment = (e) => {
         e.preventDefault()
