@@ -1,6 +1,9 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 import Header from './Header'
+import Home from './Home'
+import About from './About'
+import Services from './Services'
 import Footer from './Footer'
 
 const App = (props) => {
@@ -27,3 +30,5 @@ const App = (props) => {
       </>
   )
 }
+
+export default App
