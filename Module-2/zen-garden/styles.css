@@ -5,22 +5,22 @@
 
 @font-face {
     font-family: "Verde Moderna";
-    src: url("../zen-garden/images/verdemoderna.woff") format("woff");
+    src: url("./images/verdemoderna.woff") format("woff");
 }
 
 @font-face {
     font-family: "Julius Sans One";
-    src: url("../zen-garden/images/JuliusSansOne.woff2") format("woff2");
+    src: url("./images/JuliusSansOne.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "Libre Baskerville Normal";
-    src: url("../zen-garden/images/Libre-Baskerville-normal.woff2") format("woff2");
+    src: url("./images/Libre-Baskerville-normal.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "Libre Baskerville Italic";
-    src: url("../zen-garden/images/Libre-Baskerville-italic.woff2") format("woff2");
+    src: url("./images/Libre-Baskerville-italic.woff2") format("woff2");
 }
 
 body {
@@ -31,7 +31,7 @@ header {
     display: grid;
     grid-template-columns: 1.98fr 1.02fr;
     grid-template-rows: 13px 1fr;
-    background-image: url(../zen-garden/images/contours-opaque.png), url(../zen-garden/images/gridlines-opaque.png), url(../zen-garden/images/noise.png), url(../zen-garden/images/header-background.jpg);
+    background-image: url(./images/contours-opaque.png), url(./images/gridlines-opaque.png), url(./images/noise.png), url(./images/header-background.jpg);
     background-size: 10%, 15%, contain, cover;
     background-position: center, center, center, center;
     background-repeat: repeat, repeat, repeat, no-repeat;
@@ -303,7 +303,7 @@ ul a {
 .middle-right {
     grid-column: 2;
     grid-row: 2;
-    background-image: url(../zen-garden/images/contours-opaque.png);
+    background-image: url(./images/contours-opaque.png);
     background-size: cover;
     background-color: rgba(138, 188, 159, 0.4);
     display: flex;
@@ -314,7 +314,7 @@ ul a {
 #middleBackground {
     grid-column: 1/-1;
     grid-row: 2;
-    background-image: url(../zen-garden/images/bamboo.png);
+    background-image: url(./images/bamboo.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(138,188,159,0.5);
@@ -363,7 +363,7 @@ footer {
 #footerTop {
     height: 310px;
     grid-row: 1;
-    background-image: url(../zen-garden/images/contours-opaque.png), url(../zen-garden/images/gridlines-opaque.png), url(../zen-garden/images/noise.png), url(../zen-garden/images/header-background.jpg);
+    background-image: url(./images/contours-opaque.png), url(./images/gridlines-opaque.png), url(./images/noise.png), url(./images/header-background.jpg);
     background-size: 10%, 15%, contain, cover;
     background-position: center, center, center, center;
     background-repeat: repeat, repeat, repeat, no-repeat;
@@ -586,7 +586,7 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
         margin-top: 0px;
-        background-image: url(../zen-garden/images/bamboo.png);
+        background-image: url(./images/bamboo.png);
         background-size: cover;
         background-repeat: no-repeat;
     }

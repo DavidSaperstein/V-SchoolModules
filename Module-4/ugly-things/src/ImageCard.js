@@ -12,6 +12,8 @@ const ImageCard = (props) => {
   const [comments, setComments] = useState([])
   const [canEditComment, setCanEditComment] = useState(false)
 
+  
+
 
   React.useEffect(() => {
     // console.log(images)

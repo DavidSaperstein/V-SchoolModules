@@ -35,18 +35,30 @@ export default class DiceBox extends React.Component {
     }
 
     handleRollDice = () => {
-        const newDice = this.state.dice.map(die => {
-            if(die.selected === false) {
-                const newNum = this.randomNumGen()
-                console.log(newNum)
-                return {num: newNum, selected: false}
-            } else {
-                return die
-            }
+        this.setState(prevState => {
+            const newDice = prevState.dice.map(die => {
+                if(die.selected === false) {
+                    const newNum = this.randomNumGen()
+                    console.log(newNum)
+                    return {num: newNum, selected: false}
+                } else {
+                    return die
+                }
+            })
+            return {dice: newDice}    
         })
-        this.setState(prevState => {            
-            return {dice: newDice}
-        })
+        // const newDice = this.state.dice.map(die => {
+        //     if(die.selected === false) {
+        //         const newNum = this.randomNumGen()
+        //         console.log(newNum)
+        //         return {num: newNum, selected: false}
+        //     } else {
+        //         return die
+        //     }
+        // })
+        // this.setState(prevState => {            
+        //     return {dice: newDice}
+        // })
     }
     
     // handleSelectDice = (event) => {

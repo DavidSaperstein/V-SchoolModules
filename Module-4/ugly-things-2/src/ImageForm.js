@@ -11,6 +11,7 @@ const ImageForm = (props) => {
   const [nextId, setNextId] = useState(1)
   const {images, setImages} = useContext(ImageContext)
 
+
   const handleSubmit = (e) => {
     e.preventDefault()
     setImages(prevImages => [

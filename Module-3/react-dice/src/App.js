@@ -10,10 +10,10 @@ export default function App() {
             <h1>Roll the Dice!</h1>
             <DiceBox />
         </div>
-            <Parent text="text">
+            {/* <Parent text="text">
                 <h1>{props.text}</h1>
                 <h1></h1>
-            </Parent>
+            </Parent> */}
         </>
     )
 }
