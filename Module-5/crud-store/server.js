@@ -18,6 +18,8 @@ mongoose.connect('mongodb://localhost:27017/crud-store',
 
 app.use('/inventory', require('./routes/inventory.js'))
 
+//testing
+
 app.listen(9000, () => {
   console.log("I'm a server!")
 })
