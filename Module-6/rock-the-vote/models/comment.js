@@ -10,6 +10,11 @@ const commentSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
     required: true
+  },
+  issue: {
+    type: Schema.Types.ObjectId,
+    ref: "Issue",
+    required: true
   }
 })
 

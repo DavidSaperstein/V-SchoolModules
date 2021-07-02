@@ -4,7 +4,8 @@ const Schmea = mongoose.Schmea
 const issueSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   description: {
     type: String,
@@ -18,11 +19,11 @@ const issueSchema = new mongoose.Schema({
     required: true
   },
   upvotes: {
-    type: Number,
+    type: Array,
     required: true
   },
   downvotes: {
-    type: Number,
+    type: Array,
     required: true
   }
 })
