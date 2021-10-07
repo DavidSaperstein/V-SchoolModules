@@ -1,9 +1,11 @@
 import React, { useState, useContext } from 'react'
 import AuthForm from './AuthForm.js'
+import { UserContext } from './../context/UserProvider.js'
 
 const initInputs = { username: "", password: "" }
 
-export default function Auth(){
+export default function Auth(props){
+  const { token, logout, login, signup } = useContext(UserContext)
   const [inputs, setInputs] = useState(initInputs)
   const [toggle, setToggle] = useState(false)
 
@@ -17,12 +19,12 @@ export default function Auth(){
 
   function handleSignup(e){
     e.preventDefault()
-    //signup(inputs)
+    signup(inputs)
   }
 
   function handleLogin(e){
     e.preventDefault()
-    //login(inputs)
+    login(inputs)
   }
 
   return (

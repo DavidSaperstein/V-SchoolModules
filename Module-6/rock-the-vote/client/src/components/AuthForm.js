@@ -26,7 +26,7 @@ export default function AuthForm(props){
         name="password"
         onChange={handleChange}
         placeholder="Password"/>
-      <button type="button">{ btnText }</button>
+      <input type="submit" value={btnText}/>
     </form>
   )
 }

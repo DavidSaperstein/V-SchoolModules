@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schmea = mongoose.Schmea
+const Schema = mongoose.Schema
 
 const issueSchema = new mongoose.Schema({
   title: {
@@ -24,6 +24,11 @@ const issueSchema = new mongoose.Schema({
   },
   downvotes: {
     type: Array,
+    required: true
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
     required: true
   }
 })

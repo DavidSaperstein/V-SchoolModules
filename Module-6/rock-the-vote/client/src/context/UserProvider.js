@@ -16,7 +16,7 @@ export default function UserProvider(props){
   const initState = {
     user: JSON.parse(localStorage.getItem("user")) || {},
     token: localStorage.getItem("token") || "",
-    todos: []
+    issues: []
   }
 
   const [userState, setUserState] = useState(initState)
@@ -27,7 +27,6 @@ export default function UserProvider(props){
         const { user, token } = res.data
         localStorage.setItem("token", token)
         localStorage.setItem("user", JSON.stringify(user))
-        getUserIssues()
         setUserState(prevUserState => ({
           ...prevUserState,
           user,
@@ -43,7 +42,7 @@ export default function UserProvider(props){
         const { user, token } = res.data
         localStorage.setItem("token", token)
         localStorage.setItem("user", JSON.stringify(user))
-        getUserTodos()
+        getUserIssues()
         setUserState(prevUserState => ({
           ...prevUserState,
           user,
