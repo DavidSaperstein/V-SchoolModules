@@ -3,10 +3,15 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Navbar from './components/Navbar.js'
 import Auth from './components/Auth.js'
 import Profile from './components/Profile.js'
+import PostList from './components/PostList.js'
+import PostForm from './components/PostForm.js'
 import { UserContext } from './context/UserProvider.js'
+import { IssueContext } from './context/IssueProvider.js'
 
 export default function App(){
-  const { token, logout, login, signup } = useContext(UserContext)
+  const { user, token, logout, login, signup, addIssue } = useContext(UserContext)
+  const { getIssues } = useContext(IssueContext)
+
   return (
     <div className="app">
       <Navbar logout={logout}/>
@@ -17,13 +22,19 @@ export default function App(){
         />
         <Route
           path="/profile"
-          render={() => <Profile />}
+          render={() => <Profile username={user.username}/>}
         />
-        {/* <Route
+        <Route
           path="/issues"
-          render={() => <IssueList />}
-        /> */}
+          render={() => <PostList />}
+        />
+        <Route
+          path="/newissue"
+          render={() => <PostForm addIssue={addIssue} />}
+        />
       </Switch>
+      
+
     </div>
   )
 }

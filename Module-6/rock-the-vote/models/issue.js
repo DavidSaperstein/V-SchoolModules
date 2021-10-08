@@ -15,7 +15,7 @@ const issueSchema = new mongoose.Schema({
     type: String,
   },
   dateAdded: {
-    type: Date,
+    type: String,
     required: true
   },
   upvotes: {

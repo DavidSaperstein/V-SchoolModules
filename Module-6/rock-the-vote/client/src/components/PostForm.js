@@ -1,13 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
+import { UserContext } from './../context/UserProvider.js'
 
-const initInputs = {
-  title: "",
-  description: ""
-}
+
 
 export default function PostForm(props){
+
+  const { user } = useContext(UserContext)
+
+  const initInputs = {
+    title: "",
+    description: "",
+    imgUrl: "",
+    dateAdded: "",
+    upvotes: [],
+    downvotes: [],
+    user: user._id
+  }
   const [inputs, setInputs] = useState(initInputs)
-  const { addPost } = props
+  const { addIssue } = props
+  let history = useHistory()
   
   function handleChange(e){
     const {name, value} = e.target
@@ -16,16 +28,27 @@ export default function PostForm(props){
       [name]: value
     }))
   }
-
-  function handleSubmit(e){
+  
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    addPost(inputs)
+    let now = new Date().toString()
+    console.log(typeof now)
+    console.log("inputs1", inputs)
+    await setInputs(prevInputs => ({
+      ...prevInputs,
+      dateAdded: now
+    }))
+    console.log(inputs.dateAdded)
+    console.log("inputs2", inputs)
+    addIssue(inputs)
     setInputs(initInputs)
+    history.push("/issues")
   }
 
   const { title, description } = inputs
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} classname='form-container'>
       <input
         type="text"
         name="title"
@@ -37,9 +60,10 @@ export default function PostForm(props){
         type="textarea"
         name="description"
         value={description}
-        onChange={handlechange}
+        onChange={handleChange}
         placeholder="Description"
       />
+      <input type="submit" value="Post"/>
     </form>
   )
 }

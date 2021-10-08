@@ -20,7 +20,7 @@ issueRouter.get("/user", (req, res, next) => {
     res.status(500)
     return next(err)
     }
-    return res.status(200).send(todos)
+    return res.status(200).send(issues)
   })  
 })
 
