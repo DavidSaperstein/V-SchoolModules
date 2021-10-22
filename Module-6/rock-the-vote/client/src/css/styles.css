@@ -99,7 +99,7 @@ a {
   background-color:rgba(22, 22, 23);
 }
 
-input[type=text], input[type=textarea] {
+input[type=text], textarea {
   background-color:rgba(22, 22, 23);
 }
 
@@ -107,7 +107,7 @@ input[type=text] {
   height: 30px;
 }
 
-input[type=textarea] {
+textarea {
   height: 100px;
 }
 

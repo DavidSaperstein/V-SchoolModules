@@ -66,16 +66,17 @@ export default function PostForm(props){
           placeholder="Image URL"
           className='inputs'
         />
-        <input
-          type="textarea"
+        <textarea
           name="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Description"
           className='inputs'
           style={{color: 'rgb(216, 218, 220)'}}
-          cols='100'
-          rows='100'
+          wrap='hard'
+          rows='10'
+          col='30'
+          resize='vertical'
         />
         <input type="submit" value="Post"/>
       </form>
