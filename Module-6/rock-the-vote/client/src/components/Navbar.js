@@ -8,7 +8,7 @@ export default function Navbar(props){
 
   const linkStyles = {
     textDecoration: 'none',
-    fontSize: '2vw'
+    fontSize: 'calc(10px + 1vw)'
   }
 
   return (

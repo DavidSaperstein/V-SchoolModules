@@ -23,9 +23,18 @@ export default function Post(props){
   return (
     <div className='post-page-container'>
       <div className="post-container">
-        <h2>{currentIssue.title}</h2>
-        {currentIssue?.imgUrl && <img src={currentIssue.imgUrl}/>}
-        <p>{currentIssue.description}</p>
+        <h2 style={{
+          marginBottom: '20px', 
+          border: 'solid rgb(100, 100, 102) 1px'
+        }}>
+          {currentIssue.title}
+        </h2>
+        {currentIssue?.imgUrl && 
+          <img 
+            src={currentIssue.imgUrl} 
+            style={{marginBottom: '20px', border: 'solid rgb(100, 100, 102) 1px'}}
+          />}
+        <p style={{marginBottom: '20px'}}>{currentIssue.description}</p>
       </div>
       <CommentForm id={issueId}/>
       {commentState.map(comment => {

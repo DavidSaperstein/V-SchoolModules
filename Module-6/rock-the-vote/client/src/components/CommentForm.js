@@ -27,7 +27,8 @@ export default function CommentForm(props){
         name="description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        placeholder=""
+        placeholder="Post a new comment here"
+        style={{color: 'rgb(216, 218, 220)', width: '100%'}}
       />
       <input type='submit' value='Add Comment'/>
     </form>

@@ -1,12 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { IssueContext } from './../context/IssueProvider.js'
 import { UserContext } from './../context/UserProvider.js'
 import { Link } from 'react-router-dom'
 
 export default function PostList(props){
 
-  const { getComments, issueState, editIssue } = useContext(IssueContext)
+  const { getIssues, getComments, issueState, editIssue } = useContext(IssueContext)
   const { user } = useContext(UserContext)
+
+  useEffect(() => {
+    getIssues()
+  }, [])
 
   //functional, but score is bugged if you mash the button.
   //possible fix disabling button until res.data comes back?

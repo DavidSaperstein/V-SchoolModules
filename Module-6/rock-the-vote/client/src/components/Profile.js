@@ -10,7 +10,7 @@ export default function Profile(props){
       <div className="profile">
         <h1 style={{marginBottom: '20px'}}>Welcome {username}!</h1>
         <div className='profile-post-container'>
-          <h2>Your posts</h2>
+          <h2 style={{marginBottom: '15px'}}>Your posts</h2>
           <PostList />
         </div>
       </div>

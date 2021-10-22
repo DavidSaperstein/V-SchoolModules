@@ -21,7 +21,6 @@ body {
   border: solid rgb(100, 100, 102) 1px;
   min-height: 50px;
   margin-bottom: 30px;
-  font-size: 2vw;
   font-family: 'IBM Plex Sans', sans-serif;
   background-color: rgba(26, 26, 27);
   text-decoration: none;
@@ -30,6 +29,14 @@ body {
 
 a {
   color: ivory;
+}
+
+.auth-container {
+  color: rgb(216, 218, 220);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .issue-container {
@@ -41,7 +48,7 @@ a {
 }
 
 .post-container, .comment-container {
-  border: solid black 1px;
+  border: solid rgb(100, 100, 102) 1px;
   background-color: rgba(26, 26, 27);
   width: 50vw;
   color: rgb(216, 218, 220)
@@ -85,10 +92,10 @@ a {
   color: white;
 }
 
-.form-container, .comment-form {
+.form-container, .comment-form, .auth-form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin: 20px 0;
   background-color:rgba(22, 22, 23);
 }
 
@@ -104,13 +111,14 @@ input[type=textarea] {
   height: 100px;
 }
 
-.form-container {
+.form-container, .comment-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 150px;
   width: 50vw;
   gap: 20px;
+  border: solid rgb(100, 100, 102) 1px;
 }
 
 .form-container-container {
@@ -127,6 +135,10 @@ input[name=title] {
   margin-top: 20px;
 }
 
+img {
+  width: 100%;
+  max-height: 500px;
+}
 
 /* .profile-post-container {
 

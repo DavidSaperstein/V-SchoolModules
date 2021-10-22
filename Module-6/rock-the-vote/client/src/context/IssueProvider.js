@@ -53,9 +53,9 @@ export default function IssueProvider(props){
     .catch(err => console.error(err))
   }
 
-  useEffect(() => {
-    getIssues()
-  }, [])
+  // useEffect(() => {
+  //   getIssues()
+  // }, [])
 
 
   return (
