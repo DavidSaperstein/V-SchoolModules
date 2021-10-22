@@ -1,29 +1,77 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect, useState, useContext } from 'react'
+import { UserContext } from './UserProvider.js'
 
 export const IssueContext = React.createContext()
 
 export default function IssueProvider(props){
 
-  const initState = {
-    issues: []
-  }
 
-  const [issueState, setIssueState] = useState(initState)
+  const [issueState, setIssueState] = useState([])
+  const [currentIssue, setCurrentIssue] = useState({})
+  const [commentState, setCommentState] = useState([])
+  const { userAxios } = useContext(UserContext)
 
   function getIssues(){
-    axios.get("/api/")
+    userAxios.get("/api/issue")
       .then(res => {
-        setIssueState(res.data)
+        const newState = res.data
+        newState.sort((a, b ) => b.score - a.score )
+        setIssueState(newState)
       })
       .catch(err => console.log(err.response.data.errMsg))
   }
 
+  function getIssueById(id){
+    userAxios.get(`/api/issue/${id}`)
+      .then(res => {
+        setCurrentIssue(res.data)
+      })
+      .catch(err => console.log(err.response.data.errMsg))
+  }
+
+  function editIssue(updates, id) {
+    userAxios.put(`/api/issue/${id}`, updates)
+      .then(res => {
+        setIssueState(prevIssueState => prevIssueState.map(issue => issue._id !== id ? issue : res.data))
+      })
+      .catch(err => console.error(err))
+  }
+
+  function addComment(newComment, id) {
+    userAxios.post(`/api/comment/${id}`, newComment)
+    .then(res => {
+      setCommentState(prevState => [...prevState, res.data])
+    })
+    .catch(err => console.log(err.response.data.errMsg))
+  }
+
+  function getComments(id) {
+    userAxios.get(`/api/comment/${id}`)
+    .then(res => {
+      setCommentState(res.data)
+    })
+    .catch(err => console.error(err))
+  }
+
+  useEffect(() => {
+    getIssues()
+  }, [])
+
+
   return (
     <IssueContext.Provider 
       value={{
-        ...issueState,
+        issueState,
+        setIssueState,
+        currentIssue,
+        setCurrentIssue,
         getIssues,
+        getIssueById,
+        editIssue,
+        addComment,
+        getComments,
+        commentState,
+        setCommentState
       }}>
       {props.children}
     </IssueContext.Provider>

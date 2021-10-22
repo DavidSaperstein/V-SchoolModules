@@ -5,7 +5,7 @@ import { UserContext } from './../context/UserProvider.js'
 const initInputs = { username: "", password: "" }
 
 export default function Auth(props){
-  const { token, logout, login, signup } = useContext(UserContext)
+  const { login, signup } = useContext(UserContext)
   const [inputs, setInputs] = useState(initInputs)
   const [toggle, setToggle] = useState(false)
 

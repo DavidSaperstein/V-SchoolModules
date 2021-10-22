@@ -24,6 +24,17 @@ issueRouter.get("/user", (req, res, next) => {
   })  
 })
 
+//get issue by issue id
+issueRouter.get("/:issueId", (req, res, next) => {
+  Issue.findById(req.params.issueId, (err, issue) => {
+    if(err) {
+      res.status(500)
+      return next(err)
+    }
+    return res.status(200).send(issue)
+  })
+})
+
 //add new issue
 issueRouter.post("/", (req, res, next) => {
   Issue.findOne({ title: req.body.title }, (err, issue) => {
@@ -60,14 +71,16 @@ issueRouter.delete("/:issueId", (req, res, next) => {
 //update issue
 issueRouter.put("/:issueId", (req, res, next) => {
   Issue.findOneAndUpdate(
-    { _id: req.params.todoId, user: req.user._id },
+    { _id: req.params.issueId, user: req.user._id },
     req.body,
     { new: true },
     (err, updatedIssue) => {
       if(err){
+        console.log(req.body)
         res.status(500)
         return next(err)
       }
+      console.log(req.body)
       return res.status(201).send(updatedIssue)
     }
   )

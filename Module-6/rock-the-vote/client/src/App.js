@@ -5,6 +5,7 @@ import Auth from './components/Auth.js'
 import Profile from './components/Profile.js'
 import PostList from './components/PostList.js'
 import PostForm from './components/PostForm.js'
+import Post from './components/Post.js'
 import { UserContext } from './context/UserProvider.js'
 import { IssueContext } from './context/IssueProvider.js'
 
@@ -25,12 +26,16 @@ export default function App(){
           render={() => <Profile username={user.username}/>}
         />
         <Route
-          path="/issues"
+          exact path="/issues"
           render={() => <PostList />}
         />
         <Route
           path="/newissue"
           render={() => <PostForm addIssue={addIssue} />}
+        />
+        <Route
+          path="/issues/:issueId"
+          render={() => <Post />}
         />
       </Switch>
       

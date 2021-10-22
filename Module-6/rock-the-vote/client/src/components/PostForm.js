@@ -1,69 +1,84 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { UserContext } from './../context/UserProvider.js'
+import { IssueContext } from './../context/IssueProvider.js'
 
 
 
 export default function PostForm(props){
 
-  const { user } = useContext(UserContext)
+  const { user, addIssue  } = useContext(UserContext)
+  const { issueState, setIssueState } = useContext(IssueContext)
 
-  const initInputs = {
-    title: "",
-    description: "",
-    imgUrl: "",
-    dateAdded: "",
-    upvotes: [],
-    downvotes: [],
-    user: user._id
-  }
-  const [inputs, setInputs] = useState(initInputs)
-  const { addIssue } = props
+  const [title, setTitle] = useState("")
+  const [description, setDescription] = useState("")
+  const [imgUrl, setImgUrl] = useState("")
+
+  
   let history = useHistory()
   
-  function handleChange(e){
-    const {name, value} = e.target
-    setInputs(prevInputs => ({
-      ...prevInputs,
-      [name]: value
-    }))
-  }
+  // function handleChange(e){
+  //   const {name, value} = e.target
+  //   setInputs(prevInputs => ({
+  //     ...prevInputs,
+  //     [name]: value
+  //   }))
+  // }
   
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    let now = new Date().toString()
-    console.log(typeof now)
-    console.log("inputs1", inputs)
-    await setInputs(prevInputs => ({
-      ...prevInputs,
-      dateAdded: now
-    }))
-    console.log(inputs.dateAdded)
-    console.log("inputs2", inputs)
-    addIssue(inputs)
-    setInputs(initInputs)
+    let dateAdded = new Date().toString()
+    const newIssue = {
+      title: title,
+      description: description,
+      imgUrl: imgUrl,
+      dateAdded: dateAdded,
+      upvotes: [],
+      downvotes: [],
+      user: user._id,
+      score: 0
+    }
+    addIssue(newIssue)
+    setIssueState(prevState => [ ...prevState, newIssue ])
+    console.log(issueState)
+    setTitle("")
+    setDescription("")
+    setImgUrl("")
     history.push("/issues")
   }
 
-  const { title, description } = inputs
-
   return (
-    <form onSubmit={handleSubmit} classname='form-container'>
-      <input
-        type="text"
-        name="title"
-        value={title}
-        onChange={handleChange}
-        placeholder="Title"
-      />
-      <input
-        type="textarea"
-        name="description"
-        value={description}
-        onChange={handleChange}
-        placeholder="Description"
-      />
-      <input type="submit" value="Post"/>
-    </form>
+    <div className='form-container-container'>
+      <form onSubmit={handleSubmit} className='form-container'>
+        <input
+          type="text"
+          name="title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Title"
+          className='inputs'
+        />
+        <input
+          type="text"
+          name="imgUrl"
+          value={imgUrl}
+          onChange={(e) => setImgUrl(e.target.value)}
+          placeholder="Image URL"
+          className='inputs'
+        />
+        <input
+          type="textarea"
+          name="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Description"
+          className='inputs'
+          style={{color: 'rgb(216, 218, 220)'}}
+          cols='100'
+          rows='100'
+        />
+        <input type="submit" value="Post"/>
+      </form>
+    </div>
   )
 }
