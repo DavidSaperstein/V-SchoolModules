@@ -20,11 +20,9 @@ const issueSchema = new mongoose.Schema({
   },
   upvotes: {
     type: Array,
-    required: true
   },
   downvotes: {
     type: Array,
-    required: true
   },
   user: {
     type: Schema.Types.ObjectId,

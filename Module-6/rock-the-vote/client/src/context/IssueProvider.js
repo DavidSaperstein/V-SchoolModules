@@ -9,7 +9,7 @@ export default function IssueProvider(props){
   const [issueState, setIssueState] = useState([])
   const [currentIssue, setCurrentIssue] = useState({})
   const [commentState, setCommentState] = useState([])
-  const { userAxios } = useContext(UserContext)
+  const { userAxios, user, userState, setUserState, getUserIssues } = useContext(UserContext)
 
   function getIssues(){
     userAxios.get("/api/issue")
@@ -17,6 +17,7 @@ export default function IssueProvider(props){
         const newState = res.data
         newState.sort((a, b ) => b.score - a.score )
         setIssueState(newState)
+        getUserIssues()
       })
       .catch(err => console.log(err.response.data.errMsg))
   }
@@ -32,7 +33,11 @@ export default function IssueProvider(props){
   function editIssue(updates, id) {
     userAxios.put(`/api/issue/${id}`, updates)
       .then(res => {
-        setIssueState(prevIssueState => prevIssueState.map(issue => issue._id !== id ? issue : res.data))
+        console.log(updates)
+        console.log(res.data)
+        setIssueState(prevState => (
+          prevState.map(issue => issue._id !== id ? issue : res.data)
+        ))
       })
       .catch(err => console.error(err))
   }

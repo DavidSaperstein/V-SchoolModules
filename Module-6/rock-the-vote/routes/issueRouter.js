@@ -81,6 +81,7 @@ issueRouter.put("/:issueId", (req, res, next) => {
         return next(err)
       }
       console.log(req.body)
+      console.log('is this actually posting')
       return res.status(201).send(updatedIssue)
     }
   )

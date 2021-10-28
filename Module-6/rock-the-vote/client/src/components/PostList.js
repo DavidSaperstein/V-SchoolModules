@@ -17,22 +17,18 @@ export default function PostList(props){
   const handleUpvote = (issue) => {
     const {_id, upvotes, downvotes} = issue
     if(upvotes.includes(user._id)) {
-      const updatedIssue = {...issue}
-      const newArray = upvotes.filter(voter => voter != user._id)
-      updatedIssue.upvotes = newArray
-      updatedIssue.score--
-      editIssue(updatedIssue, _id )
+      issue.upvotes = upvotes.filter(voter => voter !== user._id)
+      issue.score--
+      editIssue(issue, _id )
     } else {
-      const updatedIssue = {...issue}
       if(downvotes.includes(user._id)) {
-        const newArray = downvotes.filter(voter => voter != user._id)
-        updatedIssue.downvotes = newArray
-        updatedIssue.score++
+        issue.downvotes = downvotes.filter(voter => voter !== user._id)
+        issue.score++
       }
-      updatedIssue.upvotes.push(user._id)
-      updatedIssue.score++
-      console.log(updatedIssue)
-      editIssue(updatedIssue , _id )
+      issue.upvotes.push(user._id)
+      issue.score++
+      console.log(issue)
+      editIssue(issue , _id )
     }
   }
 
@@ -40,14 +36,14 @@ export default function PostList(props){
     const {_id, upvotes, downvotes} = issue
     if(downvotes.includes(user._id)) {
       const updatedIssue = {...issue}
-      const newArray = downvotes.filter(voter => voter != user._id)
+      const newArray = downvotes.filter(voter => voter !== user._id)
       updatedIssue.downvotes = newArray
       updatedIssue.score++
       editIssue(updatedIssue, _id )
     } else {
       const updatedIssue = {...issue}
       if(upvotes.includes(user._id)) {
-        const newArray = upvotes.filter(voter => voter != user._id)
+        const newArray = upvotes.filter(voter => voter !== user._id)
         updatedIssue.upvotes = newArray
         updatedIssue.score--
       }
@@ -68,17 +64,22 @@ export default function PostList(props){
   return(
     <ul className='issue-container'>
       {issueState.map(issue => {
-      // const score = (issue.upvotes.length -= issue.downvotes.length)
-      return(
-        <li className='list-container'>
-          <div className='vote-container'>
-            <p onClick={() => handleUpvote(issue)}>/\</p>
-            <h2>{issue.score}</h2>
-            <p onClick={() => handleDownvote(issue)}>\/</p>
-          </div>
-          <Link to={`/issues/${issue._id}`} style={linkStyle}>{issue.title}</Link>
-        </li> )}
-      )}
+        console.log(issue)
+        return(
+          <li className='list-container'>
+            <div className='vote-container'>
+              <p onClick={() => handleUpvote(issue)}>/\</p>
+              <h2>{issue.score}</h2>
+              <p onClick={() => handleDownvote(issue)}>\/</p>
+            </div>
+            <Link 
+              to={`/issues/${issue._id}`} 
+              style={linkStyle}
+            >
+              {issue.title}
+            </Link>
+          </li> )}
+        )}
     </ul>
   )
 }

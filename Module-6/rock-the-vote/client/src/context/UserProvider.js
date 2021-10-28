@@ -92,7 +92,8 @@ export default function UserProvider(props){
         login,
         logout,
         addIssue,
-        userAxios
+        userAxios,
+        getUserIssues
       }}>
       { props.children }
     </UserContext.Provider>
