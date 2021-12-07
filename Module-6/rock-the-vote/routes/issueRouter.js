@@ -70,8 +70,10 @@ issueRouter.delete("/:issueId", (req, res, next) => {
 
 //update issue
 issueRouter.put("/:issueId", (req, res, next) => {
+  console.log(req.user._id)
+  console.log(req.body.upvotes)
   Issue.findOneAndUpdate(
-    { _id: req.params.issueId, user: req.user._id },
+    { _id: req.params.issueId },
     req.body,
     { new: true },
     (err, updatedIssue) => {

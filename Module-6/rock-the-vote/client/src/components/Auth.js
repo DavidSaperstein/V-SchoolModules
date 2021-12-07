@@ -5,7 +5,7 @@ import { UserContext } from './../context/UserProvider.js'
 const initInputs = { username: "", password: "" }
 
 export default function Auth(props){
-  const { login, signup } = useContext(UserContext)
+  const { login, signup, errMsg } = useContext(UserContext)
   const [inputs, setInputs] = useState(initInputs)
   const [toggle, setToggle] = useState(false)
 
@@ -37,7 +37,9 @@ export default function Auth(props){
               handleSubmit={handleSignup}
               inputs={inputs}
               btnText="Sign up"
+              errMsg={errMsg}
             />
+            <p style={{color: "red"}}>{errMsg}</p>
             <p onClick={()=> setToggle(prev => !prev)}>Already a member?</p>
           </>
       :
@@ -47,7 +49,9 @@ export default function Auth(props){
               handleSubmit={handleLogin}
               inputs={inputs}
               btnText="Login"
+              errMsg={errMsg}
             />
+            <p style={{color: "red"}}>{errMsg}</p>
             <p onClick={() => setToggle(prev => !prev)}>Not a member?</p>
           </>
       }
